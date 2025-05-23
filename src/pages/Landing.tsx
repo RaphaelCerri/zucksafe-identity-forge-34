@@ -81,9 +81,7 @@ const Landing = () => {
                 <p className="text-gray-300">
                   Plataforma completa para geração de dados falsos, cartões de teste, contas simuladas e refinamento de criativos.
                 </p>
-                <Button size="lg" className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-black font-bold py-6" onClick={() => window.open('https://pay.perfectpay.com.br', '_blank')}>
-                  GERAR IDENTIDADES FALSAS AGORA
-                </Button>
+                <Button size="lg" className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-black font-bold py-6" onClick={() => window.open('https://pay.perfectpay.com.br', '_blank')}>GERAR IDENTIDADES AGORA</Button>
                 <p className="text-sm text-gray-500">
                   Acesso vitalício por R$97
                 </p>
