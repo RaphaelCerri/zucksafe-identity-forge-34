@@ -2,9 +2,10 @@
 import React, { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { BarChart, Users, LogOut } from 'lucide-react';
+import { BarChart, Users, LogOut, Eye, Code } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import AdAccountCreator from '@/components/AdAccountCreator';
+import CloakerSafe from '@/components/CloakerSafe';
 
 const DashboardAds = () => {
   const [activeModule, setActiveModule] = useState('home');
@@ -18,6 +19,7 @@ const DashboardAds = () => {
 
   const modules = [
     { id: 'accounts', name: 'Criador de Contas Ads', icon: <Users className="w-5 h-5" />, component: AdAccountCreator },
+    { id: 'cloaker', name: 'Cloaker Safe', icon: <Code className="w-5 h-5" />, component: CloakerSafe },
   ];
 
   const renderContent = () => {
