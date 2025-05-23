@@ -42,7 +42,7 @@ const Landing = () => {
   return <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
       {/* Header */}
       <header className="border-b border-gray-800 bg-transparent backdrop-blur-sm">
-        <div className="container mx-auto px-4 py-2 -mb-20 absolute top-0 left-0 z-10">
+        <div className="container mx-auto px-4 py-2 -mb-20">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
               <img src="/lovable-uploads/c2e803d1-757b-4fdd-972b-bef45d34a3ab.png" alt="ZuckSafe Logo" className="h-[120px] w-auto -mb-6 -mt-6" />
