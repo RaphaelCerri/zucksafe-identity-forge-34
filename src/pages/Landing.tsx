@@ -3,10 +3,8 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Shield, Eye, Users, CreditCard, FileText, Image, BarChart, Zap, BookOpen, Lock } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-
 const Landing = () => {
   const navigate = useNavigate();
-  
   const zuckSafeFeatures = [{
     icon: <Image className="w-8 h-8" />,
     title: "Otimização de Criativos",
@@ -41,9 +39,7 @@ const Landing = () => {
     title: "Dados Estratégicos",
     description: "Perfis com parâmetros ideais para performance e estruturação"
   }];
-  
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
+  return <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
       {/* Header - 100% Transparente e sobreposto */}
       <header className="absolute top-0 left-0 w-full z-50 bg-transparent">
         <div className="container mx-auto px-4 py-2">
@@ -152,7 +148,7 @@ const Landing = () => {
           
           {/* Combo Zuck Card - Full Width */}
           <div className="max-w-6xl mx-auto mb-16">
-            <Card className="bg-gray-800/50 border-2 border-gray-800 hover:border-red-500 transition-all duration-300 p-6 animate-fade-in shadow-xl shadow-red-500/10 py-[48px]">
+            <Card className="bg-gray-800/50 border-2 border-gray-800 hover:border-orange-500 transition-all duration-300 p-6 animate-fade-in shadow-xl shadow-red-500/10 py-[48px]">
               <CardContent className="p-0 space-y-6">
                 <div className="flex justify-center -mb-1 -mt-6 my-0">
                   <div className="flex items-center space-x-3">
@@ -259,8 +255,6 @@ const Landing = () => {
           </div>
         </div>
       </footer>
-    </div>
-  );
+    </div>;
 };
-
 export default Landing;
