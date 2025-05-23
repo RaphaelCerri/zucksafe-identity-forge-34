@@ -3,10 +3,8 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Shield, Eye, Users, CreditCard, FileText, Image, BarChart, Zap, BookOpen, Lock } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-
 const Landing = () => {
   const navigate = useNavigate();
-  
   const zuckSafeFeatures = [{
     icon: <Image className="w-8 h-8" />,
     title: "Otimização de Criativos",
@@ -32,7 +30,6 @@ const Landing = () => {
     title: "Cloaker Zuck",
     description: "Códigos inteligentes para redirecionamento com ajuste de rotas e dispositivos"
   }];
-  
   const zuckSafeAdsFeatures = [{
     icon: <Users className="w-8 h-8" />,
     title: "Perfis Ads Otimizados",
@@ -42,9 +39,7 @@ const Landing = () => {
     title: "Dados Estratégicos",
     description: "Perfis com parâmetros ideais para performance e estruturação"
   }];
-  
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
+  return <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
       {/* Header - 100% Transparente e sobreposto */}
       <header className="absolute top-0 left-0 w-full z-50 bg-transparent">
         <div className="container mx-auto px-4 py-2">
@@ -54,11 +49,7 @@ const Landing = () => {
             </div>
             
             <div className="flex space-x-4">
-              <Button 
-                size="lg" 
-                onClick={() => window.open('https://pay.perfectpay.com.br', '_blank')}
-                className="bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white font-bold"
-              >
+              <Button size="lg" onClick={() => window.open('https://pay.perfectpay.com.br', '_blank')} className="bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white font-bold">
                 Adquirir Agora
               </Button>
             </div>
@@ -70,24 +61,24 @@ const Landing = () => {
       <section className="relative w-full h-screen top-0 overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
-          <img 
-            src="/lovable-uploads/ecf4153f-8771-41f5-be83-039d3fa203a8.png" 
-            alt="Background" 
-            className="absolute inset-0 w-full h-full object-cover"
-          />
+          <img src="/lovable-uploads/ecf4153f-8771-41f5-be83-039d3fa203a8.png" alt="Background" className="absolute inset-0 w-full h-full object-cover" />
           {/* Gradient overlay from bottom to middle */}
           <div className="absolute inset-0" style={{
-            background: `linear-gradient(to top, #06090f 0%, #06090f 25%, transparent 50%)`
-          }}></div>
+          background: `linear-gradient(to top, #06090f 0%, #06090f 25%, transparent 50%)`
+        }}></div>
         </div>
         
         {/* Content */}
         <div className="container mx-auto text-center relative z-10 flex flex-col justify-center h-full pt-32">
           <div className="flex justify-center flex-col items-center mb-8">
-            <h1 className="text-6xl md:text-8xl font-bold mb-4 font-gt-super" style={{ color: '#1BB98B' }}>
+            <h1 className="text-6xl md:text-8xl font-bold mb-4 font-gt-super" style={{
+            color: '#1BB98B'
+          }}>
               Todas soluções
             </h1>
-            <h2 className="text-4xl md:text-6xl font-bold font-gt-super" style={{ color: '#1BB98B' }}>
+            <h2 className="text-4xl md:text-6xl font-bold font-gt-super" style={{
+            color: '#1BB98B'
+          }}>
               em uma só plataforma
             </h2>
           </div>
@@ -97,18 +88,14 @@ const Landing = () => {
           
           {/* CTA Button */}
           <div className="flex justify-center">
-            <Button 
-              size="lg" 
-              onClick={() => {
-                const sectionToScrollTo = document.getElementById('products-section');
-                if (sectionToScrollTo) {
-                  sectionToScrollTo.scrollIntoView({
-                    behavior: 'smooth'
-                  });
-                }
-              }} 
-              className="animate-fade-in bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white font-bold w-auto"
-            >
+            <Button size="lg" onClick={() => {
+            const sectionToScrollTo = document.getElementById('products-section');
+            if (sectionToScrollTo) {
+              sectionToScrollTo.scrollIntoView({
+                behavior: 'smooth'
+              });
+            }
+          }} className="animate-fade-in bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white font-bold w-auto">
               Conheça Nossos Produtos
             </Button>
           </div>
@@ -164,11 +151,11 @@ const Landing = () => {
                   <div className="flex items-center space-x-3">
                     <h1 style={{
                     color: '#1bb88c'
-                  }} className="font-bold text-slate-50 text-2xl">ZuckSafe</h1>
+                  }} className="font-bold text-2xl text-purple-400">ZuckSafe</h1>
                     <span className="text-3xl font-bold text-white">+</span>
                     <h1 style={{
                     color: '#3b7fe4'
-                  }} className="font-bold text-slate-50 text-2xl">ZuckAds</h1>
+                  }} className="font-bold text-2xl text-purple-400">ZuckAds</h1>
                   </div>
                 </div>
                 <h2 className="font-bold text-transparent bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 bg-clip-text text-4xl">Combo Zuck</h2>
@@ -191,7 +178,7 @@ const Landing = () => {
                     <span className="text-gray-300">Economia de 25%</span>
                   </div>
                 </div>
-                <Button size="lg" className="w-full bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 hover:from-pink-600 hover:via-purple-600 hover:to-blue-600 text-white font-bold py-8 text-lg" onClick={() => window.open('https://pay.perfectpay.com.br', '_blank')}>
+                <Button size="lg" onClick={() => window.open('https://pay.perfectpay.com.br', '_blank')} className="w-full bg-gradient-to-r from-pink-500 via-purple-500 to-purple-500 hover:from-pink-600 hover:via-purple-600 hover:to-purple-600 text-white font-bold py-8 text-lg">
                   ADQUIRA O COMBO COMPLETO AGORA
                 </Button>
                 <p className="text-lg font-semibold text-transparent bg-gradient-to-r from-pink-400 to-blue-400 bg-clip-text">
@@ -273,8 +260,6 @@ const Landing = () => {
           </div>
         </div>
       </footer>
-    </div>
-  );
+    </div>;
 };
-
 export default Landing;
