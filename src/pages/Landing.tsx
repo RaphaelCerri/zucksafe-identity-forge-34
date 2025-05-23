@@ -1,7 +1,8 @@
+
 import React, { useState, useEffect, useCallback } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Shield, Eye, Users, CreditCard, FileText, Image, BarChart, Zap } from 'lucide-react';
+import { Shield, Eye, Users, CreditCard, FileText, Image, BarChart, Zap, BookOpen, Lock } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 const Landing = () => {
@@ -26,37 +27,38 @@ const Landing = () => {
 
   const zuckSafeFeatures = [{
     icon: <Image className="w-8 h-8" />,
-    title: "Refinador de Criativos",
-    description: "Remove metadados e altera hash das imagens para evitar detecção"
+    title: "Otimização de Criativos",
+    description: "Remove metadados e ajusta parâmetros visuais de imagens para uso em validação de campanhas"
   }, {
     icon: <FileText className="w-8 h-8" />,
     title: "Refinador de Texto",
-    description: "Modifica textos com caracteres unicode invisíveis"
+    description: "Ajusta estruturas textuais com modificação discreta para adequação em múltiplos contextos"
   }, {
     icon: <Users className="w-8 h-8" />,
-    title: "Dados Brasileiros",
-    description: "Gera CPF, endereços, nomes e dados completos válidos"
+    title: "Geração de Perfis Brasileiros",
+    description: "Nome, CPF, endereço, telefone e dados complementares"
   }, {
     icon: <CreditCard className="w-8 h-8" />,
-    title: "Cartões de Teste",
-    description: "Números de cartão válidos para testes de anúncios"
+    title: "Cartões ZuckFace",
+    description: "Geração de números formatados e estruturados para uso em validações e fluxos simulados"
   }, {
     icon: <Shield className="w-8 h-8" />,
-    title: "Contas Falsas",
-    description: "Emails e perfis para Gmail, Facebook e Instagram"
+    title: "Contas Auxiliares",
+    description: "Perfis para Gmail, Facebook, Instagram e outras plataformas, prontos para uso"
   }, {
     icon: <Eye className="w-8 h-8" />,
-    title: "Cloaker Safe",
-    description: "Códigos de redirecionamento prontos para usar"
+    title: "Cloaker Zuck",
+    description: "Códigos inteligentes para redirecionamento com ajuste de rotas e dispositivos"
   }];
+  
   const zuckSafeAdsFeatures = [{
     icon: <Users className="w-8 h-8" />,
-    title: "Contas Ads Aquecidas",
-    description: "Contas simuladas com alto limite de Business Managers"
+    title: "Perfis Ads Otimizados",
+    description: "Criação de contas com estrutura configurada para campanhas em ambientes de análise (Google, Facebook, TikTok)"
   }, {
     icon: <BarChart className="w-8 h-8" />,
     title: "Dados Estratégicos",
-    description: "Perfis otimizados para performance em campanhas"
+    description: "Perfis com parâmetros ideais para performance e estruturação"
   }];
   
   return <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
@@ -114,7 +116,7 @@ const Landing = () => {
             ZuckSafe
           </h1>
           <p className="text-xl md:text-2xl text-gray-200 mb-8 max-w-4xl mx-auto animate-fade-in leading-relaxed">
-            Escolha sua plataforma: gere dados com precisão ou crie contas simuladas aquecidas com potencial de alto desempenho em campanhas.
+            Escolha sua plataforma: simule dados com precisão ou crie perfis otimizados para ambientes de validação de campanhas.
           </p>
           
           {/* CTA Button */}
@@ -146,7 +148,7 @@ const Landing = () => {
                   </div>
                 </div>
                 <h2 className="text-2xl font-bold text-white">ZuckSafe</h2>
-                <p className="text-gray-300">Plataforma completa para geração de dados, cartões de teste para anúncios, contas de e-mail, refinamento de criativos e copy.</p>
+                <p className="text-gray-300">Plataforma completa para geração de dados, cartões para validação, contas auxiliares, e otimização de elementos visuais e textuais.</p>
                 <Button size="lg" className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-black font-bold py-6" onClick={() => window.open('https://pay.perfectpay.com.br', '_blank')}>ADIQUIRIR SEU ACESSO AGORA</Button>
                 <p className="text-sm text-gray-500">Acesso vitalício por R$97,90</p>
               </CardContent>
@@ -161,8 +163,8 @@ const Landing = () => {
                   </div>
                 </div>
                 <h2 className="text-2xl font-bold text-white">ZuckSafeAds</h2>
-                <p className="text-gray-300">Ferramenta especializada para criação de contas de anúncios com alto limite de Business Management.</p>
-                <Button size="lg" className="w-full bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-black font-bold py-6" onClick={() => window.open('https://pay.perfectpay.com.br', '_blank')}>CRIE CONTAS AQUECIDAS AGORA</Button>
+                <p className="text-gray-300">Ambiente especializado para criação automatizada de perfis com estrutura otimizada para validação de campanhas em plataformas de anúncios.</p>
+                <Button size="lg" className="w-full bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-black font-bold py-6" onClick={() => window.open('https://pay.perfectpay.com.br', '_blank')}>CRIAR PERFIS OTIMIZADOS AGORA</Button>
                 <p className="text-sm text-gray-500">Acesso vitalício por R$97,90</p>
               </CardContent>
             </Card>
@@ -182,15 +184,15 @@ const Landing = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-2">
                   <div className="flex items-center space-x-2">
                     <Shield className="w-5 h-5 text-pink-400" />
-                    <span className="text-gray-300">ZuckSafe completo</span>
+                    <span className="text-gray-300">Painel ZuckSafe completo</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <BarChart className="w-5 h-5 text-blue-400" />
-                    <span className="text-gray-300">ZuckSafeAds completo</span>
+                    <span className="text-gray-300">Painel ZuckSafeAds completo</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <Users className="w-5 h-5 text-pink-400" />
-                    <span className="text-gray-300">Acesso prioritário</span>
+                    <span className="text-gray-300">Prioridade de acesso</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <CreditCard className="w-5 h-5 text-blue-400" />
@@ -247,7 +249,13 @@ const Landing = () => {
       </section>
 
       {/* Legal Notice */}
-      
+      <section className="py-8 px-4 bg-black/30">
+        <div className="container mx-auto">
+          <p className="text-xs text-gray-500 text-center max-w-4xl mx-auto">
+            Plataforma voltada para testes, simulações e desenvolvimento. Nenhum dado deve ser utilizado em operações reais. Uso indevido é de responsabilidade do usuário.
+          </p>
+        </div>
+      </section>
 
       {/* Footer */}
       <footer className="border-t border-gray-800 bg-black py-8 px-4">
@@ -256,9 +264,14 @@ const Landing = () => {
             <Shield className="w-6 h-6 text-cyan-400" />
             <span className="text-xl font-bold text-white">ZuckSafe</span>
           </div>
-          <p className="text-gray-400 text-sm">
-            © 2024 ZuckSafe. Todos os direitos reservados. Sem reembolso.
+          <p className="text-gray-400 text-sm mb-4">
+            © 2024 ZuckSafe. Todos os direitos reservados.
           </p>
+          <div className="flex justify-center space-x-4">
+            <button onClick={() => navigate('/termos-de-uso')} className="text-sm text-gray-400 hover:text-white transition-colors">Termos de Uso</button>
+            <span className="text-gray-600">|</span>
+            <button onClick={() => navigate('/politica-de-privacidade')} className="text-sm text-gray-400 hover:text-white transition-colors">Política de Privacidade</button>
+          </div>
         </div>
       </footer>
     </div>;

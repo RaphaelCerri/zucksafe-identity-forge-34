@@ -10,6 +10,8 @@ import LoginAds from "./pages/LoginAds";
 import Dashboard from "./pages/Dashboard";
 import DashboardAds from "./pages/DashboardAds";
 import NotFound from "./pages/NotFound";
+import TermosDeUso from "./pages/TermosDeUso";
+import PoliticaPrivacidade from "./pages/PoliticaPrivacidade";
 
 const queryClient = new QueryClient();
 
@@ -35,6 +37,8 @@ const App = () => (
           <Route path="/" element={<Landing />} />
           <Route path="/painel-zuck-safe-login-plataforma-digital" element={<Login />} />
           <Route path="/painel-zuck-safe-ads-login-plataforma-digital" element={<LoginAds />} />
+          <Route path="/termos-de-uso" element={<TermosDeUso />} />
+          <Route path="/politica-de-privacidade" element={<PoliticaPrivacidade />} />
           <Route 
             path="/dashboard" 
             element={
