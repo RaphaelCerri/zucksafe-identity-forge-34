@@ -45,21 +45,12 @@ const Landing = () => {
   
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
-      {/* Header - Transparente e sobreposto */}
-      <header className="absolute top-0 left-0 w-full z-50 bg-transparent backdrop-blur-sm">
+      {/* Header - 100% Transparente e sobreposto */}
+      <header className="absolute top-0 left-0 w-full z-50 bg-transparent">
         <div className="container mx-auto px-4 py-2">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
-              <img src="/lovable-uploads/c2e803d1-757b-4fdd-972b-bef45d34a3ab.png" alt="ZuckSafe Logo" className="h-[120px] w-auto -mb-6 -mt-6" />
-            </div>
-            
-            <div className="flex flex-col items-center">
-              <h1 className="text-2xl md:text-3xl font-bold" style={{ color: '#1BB98B' }}>
-                Todas soluções
-              </h1>
-              <h2 className="text-lg md:text-xl font-bold" style={{ color: '#1BB98B' }}>
-                em uma só plataforma
-              </h2>
+              <img src="/lovable-uploads/f99afcc4-763b-4462-a8cf-a1a91788c39f.png" alt="ZuckSafe Logo" className="h-[120px] w-auto -mb-6 -mt-6" />
             </div>
             
             <div className="flex space-x-4">
@@ -105,16 +96,22 @@ const Landing = () => {
           </p>
           
           {/* CTA Button */}
-          <Button size="lg" onClick={() => {
-            const sectionToScrollTo = document.getElementById('products-section');
-            if (sectionToScrollTo) {
-              sectionToScrollTo.scrollIntoView({
-                behavior: 'smooth'
-              });
-            }
-          }} className="animate-fade-in bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white font-bold">
-            Conheça Nossos Produtos
-          </Button>
+          <div className="flex justify-center">
+            <Button 
+              size="lg" 
+              onClick={() => {
+                const sectionToScrollTo = document.getElementById('products-section');
+                if (sectionToScrollTo) {
+                  sectionToScrollTo.scrollIntoView({
+                    behavior: 'smooth'
+                  });
+                }
+              }} 
+              className="animate-fade-in bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white font-bold w-auto"
+            >
+              Conheça Nossos Produtos
+            </Button>
+          </div>
         </div>
       </section>
       
