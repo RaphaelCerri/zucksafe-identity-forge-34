@@ -177,7 +177,7 @@ const Landing = () => {
                     <span className="text-gray-300 text-sm sm:text-base">Economia de 25%</span>
                   </div>
                 </div>
-                <Button size="lg" onClick={() => window.open('https://pay.perfectpay.com.br', '_blank')} className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-bold py-6 sm:py-8 text-xs sm:text-lg">
+                <Button size="lg" onClick={() => window.open('https://pay.perfectpay.com.br', '_blank')} className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-bold py-6 sm:py-8 text-xs sm:text-lg">
                   ADQUIRA O COMBO COMPLETO AGORA
                 </Button>
                 <p className="text-base sm:text-lg font-semibold bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-gray-300">
