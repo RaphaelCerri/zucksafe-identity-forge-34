@@ -1,56 +1,69 @@
 import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Copy, User, RefreshCw } from 'lucide-react';
+import { Copy, User, RefreshCw, Eye, EyeOff } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
 const AccountGenerator = () => {
   const [accounts, setAccounts] = useState<any[]>([]);
   const [isGenerating, setIsGenerating] = useState(false);
   const [platform, setPlatform] = useState('gmail');
+  const [visiblePasswords, setVisiblePasswords] = useState<{ [key: number]: boolean }>({});
   const { toast } = useToast();
 
   const generatePassword = () => {
-    const foods = [
-      'pizza', 'hamburguer', 'lasanha', 'sushi', 'tacos', 'brigadeiro', 
-      'açai', 'coxinha', 'pastel', 'feijoada', 'pamonha', 'churros',
-      'macarrao', 'risotto', 'salada', 'sorvete', 'chocolate', 'bolo',
-      'pudim', 'mousse', 'torta', 'biscoito', 'pao', 'queijo'
+    const categories = [
+      // Foods
+      ['pizza', 'hamburguer', 'lasanha', 'sushi', 'tacos', 'brigadeiro', 'açai', 'coxinha', 'pastel', 'feijoada'],
+      // Books
+      ['hobbit', 'harrypotter', 'gameofthrones', '1984', 'narnia', 'alquimista', 'pequenoPrincipe', 'senhorDosAneis'],
+      // Movies
+      ['titanic', 'starwars', 'avatar', 'matrix', 'vingadores', 'interestelar', 'inception', 'pulpfiction'],
+      // TV characters
+      ['sheldon', 'dexter', 'walterwhite', 'eleven', 'sherlock', 'daenerys', 'tyrion', 'michaelscott', 'jessepinkman'],
+      // Marvel characters
+      ['ironman', 'thor', 'thanos', 'hulk', 'spiderman', 'blackwidow', 'captainamerica', 'loki', 'deadpool'],
+      // Kitchen objects
+      ['colher', 'panela', 'garfo', 'faca', 'frigideira', 'liquidificador', 'microondas', 'tabuleiro', 'escorredor'],
+      // Sports
+      ['futebol', 'basquete', 'volei', 'tenis', 'natacao', 'ciclismo', 'corrida', 'surfe', 'judo', 'boxe'],
+      // Cities
+      ['tokyo', 'paris', 'londres', 'newyork', 'roma', 'berlim', 'madrid', 'sydney', 'riodejaneiro', 'amsterdam'],
+      // Animals
+      ['leao', 'tigre', 'aguia', 'elefante', 'girafa', 'lobo', 'baleia', 'tubarao', 'gorila', 'golfinho'],
+      // Fruits
+      ['banana', 'morango', 'melancia', 'abacaxi', 'laranja', 'uva', 'kiwi', 'manga', 'pessego', 'cereja'],
+      // Musical instruments
+      ['violao', 'piano', 'bateria', 'violino', 'saxofone', 'flauta', 'harpa', 'trompete', 'teclado', 'tambor']
     ];
 
-    const dogNames = [
-      'rex', 'bob', 'thor', 'luna', 'max', 'bella', 'buddy', 'charlie',
-      'cooper', 'lucy', 'rocky', 'molly', 'jack', 'lily', 'duke',
-      'sophie', 'bear', 'zoe', 'tucker', 'chloe', 'toby', 'ruby',
-      'buster', 'penny', 'oscar', 'maggie', 'murphy', 'daisy'
-    ];
-
-    const specialChars = ['@', '#', '$', '%', '&', '*', '!', '?', '+', '=', '-', '_'];
-
-    const wordType = Math.random() > 0.5 ? 'food' : 'dog';
-    const baseWord = wordType === 'food' 
-      ? foods[Math.floor(Math.random() * foods.length)]
-      : dogNames[Math.floor(Math.random() * dogNames.length)];
-
-    // Capitaliza a primeira letra
+    // Pick a random category and then random word from that category
+    const categoryIdx = Math.floor(Math.random() * categories.length);
+    const wordIdx = Math.floor(Math.random() * categories[categoryIdx].length);
+    const baseWord = categories[categoryIdx][wordIdx];
+    
+    // Capitalize the first letter
     const capitalizedWord = baseWord.charAt(0).toUpperCase() + baseWord.slice(1);
     
-    // Adiciona números aleatórios (2-4 dígitos)
+    // Add random numbers (2-4 digits)
     const numbers = Math.floor(Math.random() * 9000) + 1000;
     
-    // Adiciona 1 ou 2 caracteres especiais
+    // Add special characters
+    const specialChars = ['@', '#', '$', '%', '&', '*', '!', '?', '+', '=', '-', '_', '^', '~'];
     const specialCharCount = Math.random() > 0.5 ? 1 : 2;
     let specialPart = '';
     for (let i = 0; i < specialCharCount; i++) {
       specialPart += specialChars[Math.floor(Math.random() * specialChars.length)];
     }
 
-    // Combina tudo de forma aleatória
+    // Combine everything in random order
     const combinations = [
       `${capitalizedWord}${numbers}${specialPart}`,
       `${capitalizedWord}${specialPart}${numbers}`,
       `${specialPart}${capitalizedWord}${numbers}`,
-      `${numbers}${capitalizedWord}${specialPart}`
+      `${numbers}${capitalizedWord}${specialPart}`,
+      `${numbers}${specialPart}${capitalizedWord}`,
+      `${specialPart}${numbers}${capitalizedWord}`
     ];
 
     return combinations[Math.floor(Math.random() * combinations.length)];
@@ -105,6 +118,13 @@ const AccountGenerator = () => {
     setAccounts(newAccounts);
     
     setIsGenerating(false);
+  };
+
+  const togglePasswordVisibility = (index: number) => {
+    setVisiblePasswords(prev => ({
+      ...prev,
+      [index]: !prev[index]
+    }));
   };
 
   const copyAccount = (account: any) => {
@@ -191,7 +211,23 @@ Aniversário: ${account.birthday}`;
                 </div>
                 <div>
                   <p className="text-gray-400 text-xs">SENHA</p>
-                  <p className="text-white font-mono">{account.password}</p>
+                  <div className="flex items-center justify-between">
+                    <p className="text-white font-mono">
+                      {visiblePasswords[index] ? account.password : '••••••••••••'}
+                    </p>
+                    <Button
+                      size="sm" 
+                      variant="ghost" 
+                      onClick={() => togglePasswordVisibility(index)}
+                      className="text-gray-400 hover:text-white p-1 h-auto"
+                    >
+                      {visiblePasswords[index] ? (
+                        <EyeOff className="w-4 h-4" />
+                      ) : (
+                        <Eye className="w-4 h-4" />
+                      )}
+                    </Button>
+                  </div>
                 </div>
                 <div>
                   <p className="text-gray-400 text-xs">NOME</p>
