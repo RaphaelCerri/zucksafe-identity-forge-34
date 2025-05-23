@@ -151,14 +151,14 @@ const Landing = () => {
                   <div className="flex items-center space-x-3">
                     <h1 style={{
                     color: '#1bb88c'
-                  }} className="font-bold text-2xl text-purple-400">ZuckSafe</h1>
+                  }} className="text-2xl font-bold text-fuchsia-400">ZuckSafe</h1>
                     <span className="text-3xl font-bold text-white">+</span>
                     <h1 style={{
                     color: '#3b7fe4'
-                  }} className="font-bold text-2xl text-purple-400">ZuckAds</h1>
+                  }} className="font-bold text-2xl text-fuchsia-400">ZuckAds</h1>
                   </div>
                 </div>
-                <h2 className="font-bold text-transparent bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 bg-clip-text text-4xl">Combo Zuck</h2>
+                <h2 className="font-bold bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 bg-clip-text text-4xl text-fuchsia-400">Combo Zuck</h2>
                 <p className="text-gray-200 text-xl">Acesso completo a ambas as plataformas com preço especial e benefícios exclusivos.</p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-2">
                   <div className="flex items-center space-x-2">
