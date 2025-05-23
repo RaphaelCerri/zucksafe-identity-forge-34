@@ -92,15 +92,15 @@ const Landing = () => {
         {/* Content */}
         <div className="container mx-auto text-center relative z-10 flex flex-col justify-center h-full pt-32">
           <div className="flex justify-center flex-col items-center mb-8">
-            <h1 className="font-bold font-mono -mb-2 text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">Todas soluções</h1>
-            <h2 className="font-mono font-bold text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl">em uma só plataforma</h2>
+            <h1 className="font-bold font-mono -mb-2 text-white text-xl sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl">Todas soluções</h1>
+            <h2 className="font-mono font-bold text-white text-lg sm:text-xl md:text-3xl lg:text-4xl xl:text-5xl">em uma só plataforma</h2>
           </div>
           <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-200 mb-12 max-w-4xl mx-auto animate-fade-in leading-relaxed px-4">
             Escolha sua plataforma: simule dados com precisão ou crie perfis otimizados para ambientes de validação de campanhas.
           </p>
           
           {/* CTA Button */}
-          <div className="flex justify-center mb-16 sm:mb-20 md:mb-32">
+          <div className="flex justify-center mb-20 sm:mb-24 md:mb-32">
             <Button 
               size="lg" 
               onClick={() => {
@@ -146,7 +146,7 @@ const Landing = () => {
                 </div>
                 
                 <p className="text-gray-300 text-sm">Plataforma completa para geração de dados, cartões para validação, contas auxiliares, e otimização de elementos visuais e textuais.</p>
-                <Button size="lg" onClick={() => window.open('https://pay.perfectpay.com.br', '_blank')} className="w-full bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-black font-bold py-4 sm:py-6 bg-blue-500 hover:bg-blue-400 text-sm sm:text-base">
+                <Button size="lg" onClick={() => window.open('https://pay.perfectpay.com.br', '_blank')} className="w-full bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-black font-bold py-4 sm:py-6 bg-blue-500 hover:bg-blue-400 text-xs sm:text-sm md:text-base">
                   ADIQUIRIR SEU ACESSO AGORA
                 </Button>
                 <p className="text-xs sm:text-sm text-gray-300">Acesso vitalício por R$97,90</p>
@@ -161,7 +161,7 @@ const Landing = () => {
                 </div>
                 
                 <p className="text-gray-300 text-sm">Ambiente especializado para criação automatizada de perfis com estrutura otimizada para validação de campanhas em plataformas de anúncios.</p>
-                <Button size="lg" onClick={() => window.open('https://pay.perfectpay.com.br', '_blank')} className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-black font-bold py-4 sm:py-6 text-sm sm:text-base">
+                <Button size="lg" onClick={() => window.open('https://pay.perfectpay.com.br', '_blank')} className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-black font-bold py-4 sm:py-6 text-xs sm:text-sm md:text-base">
                   CRIAR PERFIS OTIMIZADOS AGORA
                 </Button>
                 <p className="text-xs sm:text-sm text-gray-300">Acesso vitalício por R$97,90</p>
@@ -203,7 +203,7 @@ const Landing = () => {
                 <Button 
                   size="lg" 
                   onClick={() => window.open('https://pay.perfectpay.com.br', '_blank')} 
-                  className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-bold py-6 sm:py-8 text-xs sm:text-base"
+                  className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-bold py-6 sm:py-8 text-xs sm:text-lg"
                 >
                   ADQUIRA O COMBO COMPLETO AGORA
                 </Button>
