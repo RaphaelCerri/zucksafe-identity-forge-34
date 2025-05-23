@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useCallback } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -7,26 +6,6 @@ import { useNavigate } from 'react-router-dom';
 
 const Landing = () => {
   const navigate = useNavigate();
-  const [mousePosition, setMousePosition] = useState({
-    x: 0,
-    y: 0
-  });
-
-  // Handle mouse movement for animation
-  const handleMouseMove = useCallback((e: MouseEvent) => {
-    setMousePosition({
-      x: e.clientX / window.innerWidth * 100,
-      y: e.clientY / window.innerHeight * 100
-    });
-  }, []);
-
-  // Set up mouse event listener
-  useEffect(() => {
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-    };
-  }, [handleMouseMove]);
 
   const zuckSafeFeatures = [
     {
@@ -91,7 +70,7 @@ const Landing = () => {
         </div>
       </header>
 
-      {/* Hero Section with Dynamic Dots Background and Uploaded Image */}
+      {/* Hero Section with Background Image */}
       <section className="relative py-32 px-4 overflow-hidden">
         {/* Background Image */}
         <div 
@@ -107,34 +86,6 @@ const Landing = () => {
               background: `linear-gradient(to top, #06090f 0%, #06090f 25%, transparent 50%)`
             }}
           ></div>
-        </div>
-
-        {/* Dynamic dots background */}
-        <div className="absolute inset-0 bg-gray-900/30">
-          <div className="dots-background" style={{
-            backgroundSize: "24px 24px",
-            backgroundImage: `radial-gradient(circle, rgba(59, 130, 246, 0.3) 2px, transparent 2px)`,
-            transform: `translate(${mousePosition.x * 0.02}px, ${mousePosition.y * 0.02}px)`,
-            transition: 'transform 0.1s ease-out'
-          }}>
-          </div>
-          <div className="dots-background" style={{
-            backgroundSize: "32px 32px",
-            backgroundImage: `radial-gradient(circle, rgba(56, 189, 248, 0.2) 3px, transparent 3px)`,
-            transform: `translate(${mousePosition.x * 0.04}px, ${mousePosition.y * 0.04}px)`,
-            transition: 'transform 0.2s ease-out'
-          }}>
-          </div>
-          <div className="dots-background" style={{
-            backgroundSize: "48px 48px",
-            backgroundImage: `radial-gradient(circle, rgba(14, 165, 233, 0.15) 4px, transparent 4px)`,
-            transform: `translate(${mousePosition.x * 0.05}px, ${mousePosition.y * 0.05}px)`,
-            transition: 'transform 0.3s ease-out'
-          }}>
-          </div>
-
-          {/* Additional gradient overlay on top of dots */}
-          <div className="absolute inset-0 bg-gradient-to-r from-gray-900/50 via-gray-900/40 to-gray-900/30"></div>
         </div>
         
         {/* Content */}
