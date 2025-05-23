@@ -42,7 +42,7 @@ const Landing = () => {
   return <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
       {/* Header */}
       <header className="border-b border-gray-800 bg-transparent backdrop-blur-sm">
-        <div className="container mx-auto px-4 py-2 -mb-20">
+        <div className="container mx-auto px-4 py-2">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
               <img src="/lovable-uploads/c2e803d1-757b-4fdd-972b-bef45d34a3ab.png" alt="ZuckSafe Logo" className="h-[120px] w-auto -mb-6 -mt-6" />
@@ -70,14 +70,10 @@ const Landing = () => {
         {/* Content */}
         <div className="container mx-auto text-center relative z-10">
           <div className="flex justify-center flex-col items-center mb-8">
-            <h1 className="text-6xl md:text-8xl font-bold mb-4" style={{
-            color: '#1BB98B'
-          }}>
+            <h1 className="text-6xl md:text-8xl font-bold mb-4" style={{ color: '#1BB98B' }}>
               Todas soluções
             </h1>
-            <h2 className="text-4xl md:text-6xl font-bold" style={{
-            color: '#1BB98B'
-          }}>
+            <h2 className="text-4xl md:text-6xl font-bold" style={{ color: '#1BB98B' }}>
               em uma só plataforma
             </h2>
           </div>
