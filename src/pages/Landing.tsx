@@ -69,8 +69,8 @@ const Landing = () => {
         
         {/* Content */}
         <div className="container mx-auto text-center relative z-10">
-          <div className="flex justify-center  -mb-6 -mt-30">
-            <img src="/lovable-uploads/c2e803d1-757b-4fdd-972b-bef45d34a3ab.png" alt="ZuckSafe Logo" className="h-[800px] w-auto -mb-48 -mt-64" />
+          <div className="flex justify-center ">
+            <img src="/lovable-uploads/c2e803d1-757b-4fdd-972b-bef45d34a3ab.png" alt="ZuckSafe Logo" className="h-[800px] w-auto" />
           </div>
           <p className="text-xl md:text-2xl text-gray-200 mb-12 max-w-4xl mx-auto animate-fade-in leading-relaxed">
             Escolha sua plataforma: simule dados com precisão ou crie perfis otimizados para ambientes de validação de campanhas.
