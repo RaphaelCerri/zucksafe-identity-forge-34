@@ -71,10 +71,10 @@ const Landing = () => {
         {/* Content */}
         <div className="container mx-auto text-center relative z-10 flex flex-col justify-center h-full pt-32">
           <div className="flex justify-center flex-col items-center mb-8">
-            <h1 className="font-bold font-mono -mb-2 text-white text-xl sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl">Todas soluções</h1>
-            <h2 className="font-mono font-bold text-white text-lg sm:text-xl md:text-3xl lg:text-4xl xl:text-5xl">em uma só plataforma</h2>
+            <h1 className="font-bold font-mono -mb-2 text-white text-3xl sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl">Todas soluções</h1>
+            <h2 className="font-mono font-bold text-white text-2xl sm:text-xl md:text-3xl lg:text-4xl xl:text-5xl">em uma só plataforma</h2>
           </div>
-          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-200 mb-12 max-w-4xl mx-auto animate-fade-in leading-relaxed px-4">
+          <p className="text-lg sm:text-base md:text-lg lg:text-xl text-gray-200 mb-12 max-w-4xl mx-auto animate-fade-in leading-relaxed px-4">
             Escolha sua plataforma: simule dados com precisão ou crie perfis otimizados para ambientes de validação de campanhas.
           </p>
           
@@ -87,7 +87,7 @@ const Landing = () => {
                 behavior: 'smooth'
               });
             }
-          }} className="bg-transparent border-2 border-white text-white font-bold w-auto transition duration-300 ease-in-out hover:bg-white/10 text-xs sm:text-sm md:text-base px-4 py-2 sm:px-6 sm:py-3 md:px-8 md:py-3">
+          }} className="bg-transparent border-2 border-white text-white font-bold w-auto transition duration-300 ease-in-out hover:bg-white/10 text-lg sm:text-sm md:text-base px-6 py-4 sm:px-6 sm:py-3 md:px-8 md:py-3">
               Conheça Nossos Produtos
             </Button>
           </div>
