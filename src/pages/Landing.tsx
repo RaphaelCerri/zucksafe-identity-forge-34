@@ -65,7 +65,7 @@ const Landing = () => {
         <div className="container mx-auto px-4 py-2">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
-              <img src="/lovable-uploads/c2e803d1-757b-4fdd-972b-bef45d34a3ab.png" alt="ZuckSafe Logo" className="h-[120px] w-auto" />
+              <img src="/lovable-uploads/c2e803d1-757b-4fdd-972b-bef45d34a3ab.png" alt="ZuckSafe Logo" className="h-[120px] w-auto -mb-6 -mt-6" />
             </div>
             <div className="flex space-x-4">
               
@@ -108,7 +108,7 @@ const Landing = () => {
         {/* Content */}
         <div className="container mx-auto text-center relative z-10">
           <div className="flex justify-center mb-6 -mb-8 -mt-30">
-            <img src="/lovable-uploads/c2e803d1-757b-4fdd-972b-bef45d34a3ab.png" alt="ZuckSafe Logo" className="h-[500px] w-auto" />
+            <img src="/lovable-uploads/c2e803d1-757b-4fdd-972b-bef45d34a3ab.png" alt="ZuckSafe Logo" className="h-[500px] w-auto -mb-20 -mt-40" />
           </div>
           <p className="text-xl md:text-2xl text-gray-200 mb-8 max-w-4xl mx-auto animate-fade-in leading-relaxed">
             Escolha sua plataforma: simule dados com precisão ou crie perfis otimizados para ambientes de validação de campanhas.
@@ -209,7 +209,7 @@ const Landing = () => {
             {/* ZuckSafe Features */}
             <div className="mb-20">
               <div className="flex justify-center items-center mb-8">
-                <img src="/lovable-uploads/c2e803d1-757b-4fdd-972b-bef45d34a3ab.png" alt="ZuckSafe Logo" className="h-[150px] w-auto" />
+                <img src="/lovable-uploads/c2e803d1-757b-4fdd-972b-bef45d34a3ab.png" alt="ZuckSafe Logo" className="h-[150px] w-auto -mb-12 -mt-12" />
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
                 {zuckSafeFeatures.map((feature, index) => <Card key={index} className="bg-gray-800/50 border-gray-700 hover:border-cyan-400 transition-all duration-300 hover:scale-105 animate-fade-in">
@@ -227,7 +227,7 @@ const Landing = () => {
             {/* ZuckSafeAds Features */}
             <div>
               <div className="flex justify-center items-center mb-8">
-                <img src="/lovable-uploads/8c3894ed-1b41-4b5d-ae03-3d94ab889c03.png" alt="ZuckSafeAds Logo" className="h-[150px] w-auto" />
+                <img src="/lovable-uploads/8c3894ed-1b41-4b5d-ae03-3d94ab889c03.png" alt="ZuckSafeAds Logo" className="h-[150px] w-auto -mb-12 -mt-12" />
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
                 {zuckSafeAdsFeatures.map((feature, index) => <Card key={index} className="bg-gray-800/50 border-gray-700 hover:border-green-400 transition-all duration-300 hover:scale-105 animate-fade-in">
@@ -258,7 +258,7 @@ const Landing = () => {
       <footer className="border-t border-gray-800 bg-black py-8 px-4">
         <div className="container mx-auto text-center">
           <div className="flex items-center justify-center space-x-2 mb-4">
-            <img src="/lovable-uploads/c2e803d1-757b-4fdd-972b-bef45d34a3ab.png" alt="ZuckSafe Logo" className="h-[100px] w-auto" />
+            <img src="/lovable-uploads/c2e803d1-757b-4fdd-972b-bef45d34a3ab.png" alt="ZuckSafe Logo" className="h-[100px] w-auto -mb-6 -mt-10" />
           </div>
           <p className="text-gray-400 text-sm mb-4">
             © 2024 ZuckSafe. Todos os direitos reservados.
