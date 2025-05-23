@@ -141,24 +141,24 @@ const Landing = () => {
           
           {/* Combo Zuck Card - Full Width */}
           <div className="max-w-6xl mx-auto mb-16">
-            <Card className="bg-gray-800/50 border-2 border-pink-400 hover:border-blue-400 transition-all duration-300 p-6 animate-fade-in shadow-xl shadow-pink-500/10 py-[48px]">
+            <Card className="bg-gray-800/50 border-2 border-red-400 hover:border-purple-400 transition-all duration-300 p-6 animate-fade-in shadow-xl shadow-red-500/10 py-[48px]">
               <CardContent className="p-0 space-y-6">
                 <div className="flex justify-center -mb-1 -mt-6 my-0">
                   <div className="flex items-center space-x-3">
                     <h1 style={{
                     color: '#1bb88c'
-                  }} className="text-2xl font-bold text-fuchsia-400">ZuckSafe</h1>
+                  }} className="text-2xl font-bold text-slate-50">ZuckSafe</h1>
                     <span className="text-3xl font-bold text-white">+</span>
                     <h1 style={{
                     color: '#3b7fe4'
-                  }} className="font-bold text-2xl text-fuchsia-400">ZuckAds</h1>
+                  }} className="font-bold text-2xl text-slate-50">ZuckAds</h1>
                   </div>
                 </div>
-                <h2 className="font-bold bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 bg-clip-text text-4xl text-fuchsia-400">Combo Zuck</h2>
+                <h2 className="font-bold bg-gradient-to-r from-red-400 via-red-400 to-purple-400 bg-clip-text text-4xl text-fuchsia-400">Combo Zuck</h2>
                 <p className="text-gray-200 text-xl">Acesso completo a ambas as plataformas com preço especial e benefícios exclusivos.</p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-2">
                   <div className="flex items-center space-x-2">
-                    <Shield className="w-5 h-5 text-pink-400" />
+                    <Shield className="w-5 h-5 text-red-400" />
                     <span className="text-gray-300">Painel ZuckSafe completo</span>
                   </div>
                   <div className="flex items-center space-x-2">
@@ -166,7 +166,7 @@ const Landing = () => {
                     <span className="text-gray-300">Painel ZuckSafeAds completo</span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <Users className="w-5 h-5 text-pink-400" />
+                    <Users className="w-5 h-5 text-red-400" />
                     <span className="text-gray-300">Prioridade de acesso</span>
                   </div>
                   <div className="flex items-center space-x-2">
@@ -174,7 +174,7 @@ const Landing = () => {
                     <span className="text-gray-300">Economia de 25%</span>
                   </div>
                 </div>
-                <Button size="lg" onClick={() => window.open('https://pay.perfectpay.com.br', '_blank')} className="w-full bg-gradient-to-r from-pink-500 via-purple-500 to-purple-500 hover:from-pink-600 hover:via-purple-600 hover:to-purple-600 text-white font-bold py-8 text-lg">
+                <Button size="lg" onClick={() => window.open('https://pay.perfectpay.com.br', '_blank')} className="w-full bg-gradient-to-r from-red-500 via-purple-500 to-purple-500 hover:from-red-600 hover:via-purple-600 hover:to-purple-600 text-white font-bold py-8 text-lg">
                   ADQUIRA O COMBO COMPLETO AGORA
                 </Button>
                 <p className="text-lg font-semibold text-transparent bg-gradient-to-r from-pink-400 to-blue-400 bg-clip-text">
