@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -98,4 +99,13 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Dot background styles */
+.dots-background {
+  position: absolute;
+  inset: -50px;
+  background-repeat: repeat;
+  background-position: center center;
+  will-change: transform;
 }

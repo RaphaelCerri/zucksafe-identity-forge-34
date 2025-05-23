@@ -1,10 +1,29 @@
-import React from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Shield, Eye, Users, CreditCard, FileText, Image, BarChart, Zap } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+
 const Landing = () => {
   const navigate = useNavigate();
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  
+  // Handle mouse movement for animation
+  const handleMouseMove = useCallback((e: MouseEvent) => {
+    setMousePosition({
+      x: (e.clientX / window.innerWidth) * 100,
+      y: (e.clientY / window.innerHeight) * 100,
+    });
+  }, []);
+
+  // Set up mouse event listener
+  useEffect(() => {
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, [handleMouseMove]);
+
   const zuckSafeFeatures = [{
     icon: <Image className="w-8 h-8" />,
     title: "Refinador de Criativos",
@@ -39,6 +58,7 @@ const Landing = () => {
     title: "Dados Estratégicos",
     description: "Perfis otimizados para performance em campanhas"
   }];
+  
   return <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
       {/* Header */}
       <header className="border-b border-gray-800 bg-black/50 backdrop-blur-sm">
@@ -58,23 +78,46 @@ const Landing = () => {
         </div>
       </header>
 
-      {/* Hero Section with Blue Graphics Background */}
-      <section className="relative py-32 px-4 bg-cover bg-center overflow-hidden" style={{
-      backgroundImage: "url('https://images.unsplash.com/photo-1551038247-3d9af20df552?auto=format&fit=crop&q=80')",
-      backgroundSize: "cover",
-      backgroundPosition: "center"
-    }}>
-        {/* Overlay with gradient */}
-        <div className="absolute inset-0 bg-gradient-to-r from-gray-900/90 via-gray-900/80 to-gray-900/70 backdrop-filter backdrop-blur-sm"></div>
+      {/* Hero Section with Dynamic Dots Background */}
+      <section className="relative py-32 px-4 overflow-hidden">
+        {/* Dynamic dots background */}
+        <div className="absolute inset-0 bg-gray-900">
+          <div className="dots-background" style={{ 
+            backgroundSize: "24px 24px",
+            backgroundImage: `radial-gradient(circle, rgba(59, 130, 246, 0.3) 2px, transparent 2px)`,
+            transform: `translate(${mousePosition.x * 0.02}px, ${mousePosition.y * 0.02}px)`,
+            transition: 'transform 0.1s ease-out'
+          }}>
+          </div>
+          <div className="dots-background" style={{ 
+            backgroundSize: "32px 32px",
+            backgroundImage: `radial-gradient(circle, rgba(56, 189, 248, 0.2) 3px, transparent 3px)`,
+            transform: `translate(${mousePosition.x * 0.04}px, ${mousePosition.y * 0.04}px)`,
+            transition: 'transform 0.2s ease-out'
+          }}>
+          </div>
+          <div className="dots-background" style={{ 
+            backgroundSize: "48px 48px",
+            backgroundImage: `radial-gradient(circle, rgba(14, 165, 233, 0.15) 4px, transparent 4px)`,
+            transform: `translate(${mousePosition.x * 0.05}px, ${mousePosition.y * 0.05}px)`,
+            transition: 'transform 0.3s ease-out'
+          }}>
+          </div>
+
+          {/* Gradient overlay on top of dots */}
+          <div className="absolute inset-0 bg-gradient-to-r from-gray-900/90 via-gray-900/80 to-gray-900/70"></div>
+        </div>
         
         {/* Content */}
         <div className="container mx-auto text-center relative z-10">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-green-400 to-cyan-400 bg-clip-text text-transparent animate-fade-in">
             ZuckSafe
           </h1>
-          <p className="text-xl md:text-2xl text-gray-200 mb-8 max-w-4xl mx-auto animate-fade-in leading-relaxed">Escolha sua plataforma: gere dados com precisão ou crie contas simuladas aquecidas com potencial de alto desempenho em campanhas.</p>
+          <p className="text-xl md:text-2xl text-gray-200 mb-8 max-w-4xl mx-auto animate-fade-in leading-relaxed">
+            Escolha sua plataforma: gere dados com precisão ou crie contas simuladas aquecidas com potencial de alto desempenho em campanhas.
+          </p>
           
-          {/* Optional - Add a CTA button here if needed */}
+          {/* CTA Button */}
           <Button size="lg" className="animate-fade-in bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white font-bold" onClick={() => {
           const sectionToScrollTo = document.getElementById('products-section');
           if (sectionToScrollTo) {
@@ -220,4 +263,5 @@ const Landing = () => {
       </footer>
     </div>;
 };
+
 export default Landing;
