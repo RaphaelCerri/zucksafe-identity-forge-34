@@ -133,20 +133,20 @@ const Landing = () => {
           
           {/* Combo Zuck Card - Full Width */}
           <div className="max-w-6xl mx-auto mb-16">
-            <Card className="bg-gray-800/50 border-2 border-pink-400 hover:border-blue-400 transition-all duration-300 p-6 animate-fade-in shadow-xl shadow-pink-500/10">
+            <Card className="bg-gray-800/50 border-2 border-pink-400 hover:border-blue-400 transition-all duration-300 p-6 animate-fade-in shadow-xl shadow-pink-500/10 py-[48px]">
               <CardContent className="p-0 space-y-6">
-                <div className="flex justify-center -mb-14 -mt-10">
+                <div className="flex justify-center -mb-1 -mt-6 my-0">
                   <div className="flex items-center space-x-3">
-                    <h1 className="text-4xl font-bold" style={{
+                    <h1 style={{
                     color: '#1bb88c'
-                  }}>ZuckSafe</h1>
+                  }} className="font-bold text-slate-50 text-2xl">ZuckSafe</h1>
                     <span className="text-3xl font-bold text-white">+</span>
-                    <h1 className="text-4xl font-bold" style={{
+                    <h1 style={{
                     color: '#3b7fe4'
-                  }}>ZuckAds</h1>
+                  }} className="font-bold text-slate-50 text-2xl">ZuckAds</h1>
                   </div>
                 </div>
-                <h2 className="text-3xl font-bold text-transparent bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 bg-clip-text">Combo Zuck</h2>
+                <h2 className="font-bold text-transparent bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 bg-clip-text text-4xl">Combo Zuck</h2>
                 <p className="text-gray-200 text-xl">Acesso completo a ambas as plataformas com preço especial e benefícios exclusivos.</p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-2">
                   <div className="flex items-center space-x-2">
@@ -183,9 +183,9 @@ const Landing = () => {
             {/* ZuckSafe Features */}
             <div className="mb-20">
               <div className="flex justify-center items-center mb-8">
-                <h1 className="text-6xl font-bold" style={{
+                <h1 style={{
                 color: '#1bb88c'
-              }}>ZuckSafe</h1>
+              }} className="font-bold text-green-500 text-4xl">ZuckSafe</h1>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
                 {zuckSafeFeatures.map((feature, index) => <Card key={index} className="bg-gray-800/50 border-gray-700 hover:border-cyan-400 transition-all duration-300 hover:scale-105 animate-fade-in">
