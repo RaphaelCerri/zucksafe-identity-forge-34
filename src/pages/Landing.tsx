@@ -2,13 +2,13 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Shield, Eye, Users, CreditCard, FileText, Image } from 'lucide-react';
+import { Shield, Eye, Users, CreditCard, FileText, Image, BarChart } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 const Landing = () => {
   const navigate = useNavigate();
 
-  const features = [
+  const zuckSafeFeatures = [
     {
       icon: <Image className="w-8 h-8" />,
       title: "Refinador de Criativos",
@@ -41,6 +41,19 @@ const Landing = () => {
     }
   ];
 
+  const zuckSafeAdsFeatures = [
+    {
+      icon: <Users className="w-8 h-8" />,
+      title: "Contas Ads Aquecidas",
+      description: "Contas simuladas com alto limite de Business Managers"
+    },
+    {
+      icon: <BarChart className="w-8 h-8" />,
+      title: "Dados Estratégicos",
+      description: "Perfis otimizados para performance em campanhas"
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
       {/* Header */}
@@ -53,13 +66,22 @@ const Landing = () => {
                 ZuckSafe
               </span>
             </div>
-            <Button 
-              onClick={() => navigate('/login')}
-              variant="outline" 
-              className="border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black"
-            >
-              Fazer Login
-            </Button>
+            <div className="flex space-x-4">
+              <Button 
+                onClick={() => navigate('/painel-zuck-safe-login-plataforma-digital')}
+                variant="outline" 
+                className="border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black"
+              >
+                Login ZuckSafe
+              </Button>
+              <Button 
+                onClick={() => navigate('/painel-zuck-safe-ads-login-plataforma-digital')}
+                variant="outline" 
+                className="border-green-400 text-green-400 hover:bg-green-400 hover:text-black"
+              >
+                Login ZuckSafeAds
+              </Button>
+            </div>
           </div>
         </div>
       </header>
@@ -71,72 +93,112 @@ const Landing = () => {
             ZuckSafe
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 mb-4 max-w-4xl mx-auto animate-fade-in">
-            A plataforma definitiva para gerar identidades falsas e evitar bloqueios em ads
-          </p>
-          <p className="text-lg text-gray-400 mb-8 max-w-3xl mx-auto animate-fade-in">
-            Você está a um clique de ter acesso à plataforma mais poderosa para gerar dados falsos, 
-            testar cadastros, evitar bloqueios e simular criativos como um profissional.
+            Escolha sua plataforma: gere dados fake com precisão ou crie contas simuladas aquecidas com potencial de alto desempenho em campanhas.
           </p>
           
-          <div className="flex flex-col md:flex-row gap-4 justify-center items-center mb-12">
-            <Button 
-              size="lg"
-              className="bg-gradient-to-r from-cyan-500 to-green-500 hover:from-cyan-600 hover:to-green-600 text-black font-bold px-8 py-6 text-lg animate-scale-in"
-              onClick={() => window.open('https://pay.perfectpay.com.br', '_blank')}
-            >
-              LIBERE SEU ACESSO POR R$97 - VITALÍCIO
-            </Button>
-            <p className="text-sm text-gray-500">
-              Após a compra, acesse com o mesmo email usado na compra
-            </p>
-          </div>
-
-          {/* Features Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {features.map((feature, index) => (
-              <Card key={index} className="bg-gray-800/50 border-gray-700 hover:border-cyan-400 transition-all duration-300 hover:scale-105 animate-fade-in">
-                <CardContent className="p-6 text-center">
-                  <div className="text-cyan-400 mb-4 flex justify-center">
-                    {feature.icon}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12 mb-16 max-w-6xl mx-auto">
+            {/* ZuckSafe Card */}
+            <Card className="bg-gray-800/50 border-gray-700 hover:border-cyan-400 transition-all duration-300 p-6 animate-fade-in">
+              <CardContent className="p-0 space-y-6">
+                <div className="flex justify-center">
+                  <div className="w-16 h-16 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full flex items-center justify-center">
+                    <Shield className="w-8 h-8 text-black" />
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-2">{feature.title}</h3>
-                  <p className="text-gray-400">{feature.description}</p>
-                </CardContent>
-              </Card>
-            ))}
+                </div>
+                <h2 className="text-2xl font-bold text-white">ZuckSafe</h2>
+                <p className="text-gray-300">
+                  Plataforma completa para geração de dados falsos, cartões de teste, contas simuladas e refinamento de criativos.
+                </p>
+                <Button 
+                  size="lg"
+                  className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-black font-bold py-6"
+                  onClick={() => window.open('https://pay.perfectpay.com.br', '_blank')}
+                >
+                  GERAR IDENTIDADES FALSAS AGORA
+                </Button>
+                <p className="text-sm text-gray-500">
+                  Acesso vitalício por R$97
+                </p>
+              </CardContent>
+            </Card>
+            
+            {/* ZuckSafeAds Card */}
+            <Card className="bg-gray-800/50 border-gray-700 hover:border-green-400 transition-all duration-300 p-6 animate-fade-in">
+              <CardContent className="p-0 space-y-6">
+                <div className="flex justify-center">
+                  <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center">
+                    <BarChart className="w-8 h-8 text-black" />
+                  </div>
+                </div>
+                <h2 className="text-2xl font-bold text-white">ZuckSafeAds</h2>
+                <p className="text-gray-300">
+                  Ferramenta especializada para criação de contas de anúncios simuladas com alto limite de Business Managers.
+                </p>
+                <Button 
+                  size="lg"
+                  className="w-full bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-black font-bold py-6"
+                  onClick={() => window.open('https://pay.perfectpay.com.br', '_blank')}
+                >
+                  CRIAR CONTAS AQUECIDAS E ESTRATÉGICAS
+                </Button>
+                <p className="text-sm text-gray-500">
+                  Acesso vitalício por R$97
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+          
+          {/* Features */}
+          <div className="mt-20">
+            <h2 className="text-3xl font-bold text-white mb-16">Nossas Soluções</h2>
+            
+            {/* ZuckSafe Features */}
+            <div className="mb-20">
+              <h3 className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-8">ZuckSafe</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                {zuckSafeFeatures.map((feature, index) => (
+                  <Card key={index} className="bg-gray-800/50 border-gray-700 hover:border-cyan-400 transition-all duration-300 hover:scale-105 animate-fade-in">
+                    <CardContent className="p-6 text-center">
+                      <div className="text-cyan-400 mb-4 flex justify-center">
+                        {feature.icon}
+                      </div>
+                      <h3 className="text-xl font-bold text-white mb-2">{feature.title}</h3>
+                      <p className="text-gray-400">{feature.description}</p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+            
+            {/* ZuckSafeAds Features */}
+            <div>
+              <h3 className="text-2xl font-bold bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent mb-8">ZuckSafeAds</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                {zuckSafeAdsFeatures.map((feature, index) => (
+                  <Card key={index} className="bg-gray-800/50 border-gray-700 hover:border-green-400 transition-all duration-300 hover:scale-105 animate-fade-in">
+                    <CardContent className="p-6 text-center">
+                      <div className="text-green-400 mb-4 flex justify-center">
+                        {feature.icon}
+                      </div>
+                      <h3 className="text-xl font-bold text-white mb-2">{feature.title}</h3>
+                      <p className="text-gray-400">{feature.description}</p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Benefits Section */}
+      {/* Legal Notice */}
       <section className="py-16 px-4 bg-gray-900/50">
-        <div className="container mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-white">
-            Por que escolher o ZuckSafe?
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-r from-cyan-500 to-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Shield className="w-8 h-8 text-black" />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-2">100% Seguro</h3>
-              <p className="text-gray-400">Dados gerados localmente, sem armazenamento em servidores</p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Users className="w-8 h-8 text-black" />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-2">Para Profissionais</h3>
-              <p className="text-gray-400">Desenvolvido para media buyers, afiliados e profissionais de ads</p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-r from-cyan-500 to-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Eye className="w-8 h-8 text-black" />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-2">Acesso Vitalício</h3>
-              <p className="text-gray-400">Pague uma vez e tenha acesso para sempre</p>
-            </div>
-          </div>
+        <div className="container mx-auto text-center max-w-4xl">
+          <h2 className="text-2xl font-bold text-white mb-4">Aviso Legal</h2>
+          <p className="text-gray-400">
+            Ambas as plataformas são voltadas para testes, educação e simulações. 
+            Nenhuma informação deve ser utilizada para finalidades ilegais.
+          </p>
         </div>
       </section>
 

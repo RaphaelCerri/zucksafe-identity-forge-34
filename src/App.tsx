@@ -6,15 +6,23 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Landing from "./pages/Landing";
 import Login from "./pages/Login";
+import LoginAds from "./pages/LoginAds";
 import Dashboard from "./pages/Dashboard";
+import DashboardAds from "./pages/DashboardAds";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
-// Componente para proteger rotas
+// Componente para proteger rotas do ZuckSafe
 const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
   const user = localStorage.getItem('zucksafe_user');
-  return user ? <>{children}</> : <Navigate to="/login" replace />;
+  return user ? <>{children}</> : <Navigate to="/painel-zuck-safe-login-plataforma-digital" replace />;
+};
+
+// Componente para proteger rotas do ZuckSafeAds
+const ProtectedRouteAds = ({ children }: { children: React.ReactNode }) => {
+  const user = localStorage.getItem('zucksafeads_user');
+  return user ? <>{children}</> : <Navigate to="/painel-zuck-safe-ads-login-plataforma-digital" replace />;
 };
 
 const App = () => (
@@ -25,13 +33,22 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Landing />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/painel-zuck-safe-login-plataforma-digital" element={<Login />} />
+          <Route path="/painel-zuck-safe-ads-login-plataforma-digital" element={<LoginAds />} />
           <Route 
             path="/dashboard" 
             element={
               <ProtectedRoute>
                 <Dashboard />
               </ProtectedRoute>
+            } 
+          />
+          <Route 
+            path="/dashboard-ads" 
+            element={
+              <ProtectedRouteAds>
+                <DashboardAds />
+              </ProtectedRouteAds>
             } 
           />
           <Route path="*" element={<NotFound />} />
