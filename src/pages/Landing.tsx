@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useCallback } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -71,12 +72,8 @@ const Landing = () => {
         {/* Content */}
         <div className="container mx-auto text-center relative z-10 flex flex-col justify-center h-full pt-32">
           <div className="flex justify-center flex-col items-center mb-8">
-            <h1 style={{
-            color: '#1BB98B'
-          }} className="font-bold font-mono -mb-2 text-8xl text-slate-50">Todas soluções</h1>
-            <h2 style={{
-            color: '#1BB98B'
-          }} className="font-mono font-bold text-7xl text-slate-50">em uma só plataforma</h2>
+            <h1 className="font-bold font-mono -mb-2 text-8xl text-white">Todas soluções</h1>
+            <h2 className="font-mono font-bold text-7xl text-white">em uma só plataforma</h2>
           </div>
           <p className="text-xl md:text-2xl text-gray-200 mb-12 max-w-4xl mx-auto animate-fade-in leading-relaxed">
             Escolha sua plataforma: simule dados com precisão ou crie perfis otimizados para ambientes de validação de campanhas.
@@ -108,9 +105,7 @@ const Landing = () => {
             <Card className="bg-gray-800/50 border-gray-700 hover:border-cyan-400 transition-all duration-300 p-6 animate-fade-in">
               <CardContent className="p-0 space-y-6">
                 <div className="flex justify-center">
-                  <h1 style={{
-                  color: '#1bb88c'
-                }} className="font-bold text-4xl text-green-500">ZuckSafe</h1>
+                  <h1 className="font-bold text-4xl text-green-500">ZuckSafe</h1>
                 </div>
                 
                 <p className="text-gray-300 text-sm">Plataforma completa para geração de dados, cartões para validação, contas auxiliares, e otimização de elementos visuais e textuais.</p>
@@ -125,9 +120,7 @@ const Landing = () => {
             <Card className="bg-gray-800/50 border-gray-700 hover:border-green-400 transition-all duration-300 p-6 animate-fade-in">
               <CardContent className="p-0 space-y-6">
                 <div className="flex justify-center">
-                  <h1 style={{
-                  color: '#3b7fe4'
-                }} className="font-bold text-4xl text-blue-500">ZuckAds</h1>
+                  <h1 className="font-bold text-4xl text-blue-500">ZuckAds</h1>
                 </div>
                 
                 <p className="text-gray-300 text-sm">Ambiente especializado para criação automatizada de perfis com estrutura otimizada para validação de campanhas em plataformas de anúncios.</p>
@@ -145,13 +138,9 @@ const Landing = () => {
               <CardContent className="p-0 space-y-6">
                 <div className="flex justify-center -mb-1 -mt-6 my-0">
                   <div className="flex items-center space-x-3">
-                    <h1 style={{
-                    color: '#1bb88c'
-                  }} className="text-2xl font-bold text-slate-50">ZuckSafe</h1>
+                    <h1 className="text-2xl font-bold text-green-500">ZuckSafe</h1>
                     <span className="text-3xl font-bold text-white">+</span>
-                    <h1 style={{
-                    color: '#3b7fe4'
-                  }} className="font-bold text-2xl text-slate-50">ZuckAds</h1>
+                    <h1 className="font-bold text-2xl text-blue-500">ZuckAds</h1>
                   </div>
                 </div>
                 <h2 className="font-bold bg-gradient-to-r from-red-400 via-red-400 to-purple-400 bg-clip-text text-4xl text-amber-500">🔥 Combo Zuck 🔥</h2>
@@ -191,14 +180,12 @@ const Landing = () => {
             {/* ZuckSafe Features */}
             <div className="mb-20">
               <div className="flex justify-center items-center mb-8">
-                <h1 style={{
-                color: '#1bb88c'
-              }} className="font-bold text-green-500 text-4xl">ZuckSafe</h1>
+                <h1 className="font-bold text-green-500 text-4xl">ZuckSafe</h1>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-                {zuckSafeFeatures.map((feature, index) => <Card key={index} className="bg-gray-800/50 border-gray-700 hover:border-cyan-400 transition-all duration-300 hover:scale-105 animate-fade-in">
+                {zuckSafeFeatures.map((feature, index) => <Card key={index} className="bg-gray-800/50 border-gray-700 hover:border-green-400 transition-all duration-300 hover:scale-105 animate-fade-in">
                     <CardContent className="p-6 text-center">
-                      <div className="text-cyan-400 mb-4 flex justify-center">
+                      <div className="text-green-400 mb-4 flex justify-center">
                         {feature.icon}
                       </div>
                       <h3 className="text-xl font-bold text-white mb-2">{feature.title}</h3>
@@ -211,14 +198,12 @@ const Landing = () => {
             {/* ZuckSafeAds Features */}
             <div>
               <div className="flex justify-center items-center mb-8">
-                <h1 style={{
-                color: '#3b7fe4'
-              }} className="font-bold text-4xl">ZuckAds</h1>
+                <h1 className="font-bold text-4xl text-blue-500">ZuckAds</h1>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-                {zuckSafeAdsFeatures.map((feature, index) => <Card key={index} className="bg-gray-800/50 border-gray-700 hover:border-green-400 transition-all duration-300 hover:scale-105 animate-fade-in">
+                {zuckSafeAdsFeatures.map((feature, index) => <Card key={index} className="bg-gray-800/50 border-gray-700 hover:border-blue-400 transition-all duration-300 hover:scale-105 animate-fade-in">
                     <CardContent className="p-6 text-center">
-                      <div className="text-green-400 mb-4 flex justify-center">
+                      <div className="text-blue-400 mb-4 flex justify-center">
                         {feature.icon}
                       </div>
                       <h3 className="text-xl font-bold text-white mb-2">{feature.title}</h3>
