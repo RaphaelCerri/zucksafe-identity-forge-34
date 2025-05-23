@@ -36,6 +36,61 @@ const DataGenerator = () => {
     return cpf.join('').replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
   };
 
+  const getRandomValidCep = async () => {
+    // Lista de CEPs reais válidos de diferentes regiões do Brasil
+    const validCeps = [
+      '01310100', // São Paulo - SP
+      '22071900', // Rio de Janeiro - RJ
+      '30130000', // Belo Horizonte - MG
+      '40070110', // Salvador - BA
+      '70040010', // Brasília - DF
+      '60160230', // Fortaleza - CE
+      '80020080', // Curitiba - PR
+      '52020030', // Recife - PE
+      '69900076', // Rio Branco - AC
+      '57020020', // Maceió - AL
+      '68906072', // Macapá - AP
+      '69400000', // Boa Vista - RR
+      '78005470', // Cuiabá - MT
+      '79002290', // Campo Grande - MS
+      '74023010', // Goiânia - GO
+      '64000100', // Teresina - PI
+      '64001120', // Teresina - PI
+      '65010000', // São Luís - MA
+      '88010400', // Florianópolis - SC
+      '64000280', // Teresina - PI
+      '49010000', // Aracaju - SE
+      '59012080', // Natal - RN
+      '76801059', // Porto Velho - RO
+      '68900073', // Macapá - AP
+      '77001002', // Palmas - TO
+      '01001000', // São Paulo - SP
+      '20040020', // Rio de Janeiro - RJ
+      '31112000', // Belo Horizonte - MG
+      '41820021', // Salvador - BA
+      '71020031', // Brasília - DF
+      '60055141', // Fortaleza - CE
+      '81200100', // Curitiba - PR
+      '50070280', // Recife - PE
+    ];
+    
+    const randomCep = validCeps[Math.floor(Math.random() * validCeps.length)];
+    
+    try {
+      const response = await fetch(`https://viacep.com.br/ws/${randomCep}/json/`);
+      const data = await response.json();
+      
+      if (!data.erro) {
+        return data;
+      }
+    } catch (error) {
+      console.log('Erro ao buscar CEP:', error);
+    }
+    
+    // Fallback para endereço fictício caso a API falhe
+    return null;
+  };
+
   const searchCep = async () => {
     const cleanCep = cep.replace(/\D/g, '');
     
@@ -96,17 +151,22 @@ const DataGenerator = () => {
     const birthMonth = 1 + Math.floor(Math.random() * 12);
     const birthDay = 1 + Math.floor(Math.random() * 28);
     
-    // Se temos dados de endereço real do CEP, usa eles, senão gera aleatório
+    // Busca um endereço real aleatório
+    const realAddress = await getRandomValidCep();
+    
     let endereco;
-    if (addressData) {
+    if (realAddress) {
+      // Gera um número aleatório para a rua
+      const numeroRua = 100 + Math.floor(Math.random() * 999);
       endereco = {
-        rua: addressData.logradouro || 'Rua não informada',
-        bairro: addressData.bairro || 'Bairro não informado',
-        cidade: addressData.localidade,
-        estado: addressData.uf,
-        cep: addressData.cep
+        rua: `${realAddress.logradouro || 'Rua não informada'}, ${numeroRua}`,
+        bairro: realAddress.bairro || 'Bairro não informado',
+        cidade: realAddress.localidade,
+        estado: realAddress.uf,
+        cep: realAddress.cep
       };
     } else {
+      // Fallback para endereço fictício
       const streets = ['Rua das Flores', 'Avenida Brasil', 'Rua da Paz', 'Avenida Central', 'Rua do Comércio'];
       const cities = ['São Paulo', 'Rio de Janeiro', 'Belo Horizonte', 'Salvador', 'Brasília', 'Fortaleza', 'Curitiba', 'Recife'];
       const states = ['SP', 'RJ', 'MG', 'BA', 'DF', 'CE', 'PR', 'PE'];
@@ -171,7 +231,7 @@ Email: ${generatedData.email}`;
       <div className="flex items-center justify-between">
         <div>
           <h2 className="text-2xl font-bold text-white mb-2">Gerador de Dados Brasileiros</h2>
-          <p className="text-gray-400">Gera dados pessoais completos e válidos</p>
+          <p className="text-gray-400">Gera dados pessoais completos e válidos com endereços reais</p>
         </div>
         <Button 
           onClick={generateData}
