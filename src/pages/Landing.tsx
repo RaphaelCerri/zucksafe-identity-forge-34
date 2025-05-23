@@ -73,14 +73,10 @@ const Landing = () => {
           <div className="flex justify-center flex-col items-center mb-8">
             <h1 style={{
             color: '#1BB98B'
-          }} className="font-bold font-mono -mb-2">
-              Todas soluções
-            </h1>
+          }} className="font-bold font-mono -mb-2 text-slate-50 text-8xl">Todas soluções</h1>
             <h2 style={{
             color: '#1BB98B'
-          }} className="text-4xl font-mono font-bold md:text-6xl">
-              em uma só plataforma
-            </h2>
+          }} className="font-mono font-bold text-7xl text-slate-50">em uma só plataforma</h2>
           </div>
           <p className="text-xl md:text-2xl text-gray-200 mb-12 max-w-4xl mx-auto animate-fade-in leading-relaxed">
             Escolha sua plataforma: simule dados com precisão ou crie perfis otimizados para ambientes de validação de campanhas.
@@ -95,7 +91,7 @@ const Landing = () => {
                 behavior: 'smooth'
               });
             }
-          }} className="animate-fade-in bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white font-bold w-auto">
+          }} className="bg-transparent border border-white text-white font-bold w-auto">
               Conheça Nossos Produtos
             </Button>
           </div>
