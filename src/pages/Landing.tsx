@@ -80,9 +80,7 @@ const Landing = () => {
                 <h2 className="text-2xl font-bold text-white">ZuckSafe</h2>
                 <p className="text-gray-300">Plataforma completa para geração de dados, cartões de teste para anúncios, contas de e-mail, refinamento de criativos e copy.</p>
                 <Button size="lg" className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-black font-bold py-6" onClick={() => window.open('https://pay.perfectpay.com.br', '_blank')}>ADIQUIRIR SEU ACESSO AGORA</Button>
-                <p className="text-sm text-gray-500">
-                  Acesso vitalício por R$97
-                </p>
+                <p className="text-sm text-gray-500">Acesso vitalício por R$97,90</p>
               </CardContent>
             </Card>
             
@@ -97,9 +95,7 @@ const Landing = () => {
                 <h2 className="text-2xl font-bold text-white">ZuckSafeAds</h2>
                 <p className="text-gray-300">Ferramenta especializada para criação de contas de anúncios com alto limite de Business Management.</p>
                 <Button size="lg" className="w-full bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-black font-bold py-6" onClick={() => window.open('https://pay.perfectpay.com.br', '_blank')}>CRIE CONTAS AQUECIDAS AGORA</Button>
-                <p className="text-sm text-gray-500">
-                  Acesso vitalício por R$97
-                </p>
+                <p className="text-sm text-gray-500">Acesso vitalício por R$97,90</p>
               </CardContent>
             </Card>
           </div>
