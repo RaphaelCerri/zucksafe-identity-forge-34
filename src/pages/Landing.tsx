@@ -91,7 +91,7 @@ const Landing = () => {
                 behavior: 'smooth'
               });
             }
-          }} className="bg-transparent border border-white text-white font-bold w-auto">
+          }} className="bg-transparent border border-white text-white font-bold w-auto transition duration-300 ease-in-out hover:bg-white/10">
               Conheça Nossos Produtos
             </Button>
           </div>
