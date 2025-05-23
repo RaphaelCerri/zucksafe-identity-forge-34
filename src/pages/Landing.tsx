@@ -215,9 +215,9 @@ const Landing = () => {
             {/* ZuckSafeAds Features */}
             <div>
               <div className="flex justify-center items-center mb-8">
-                <h1 className="text-6xl font-bold" style={{
+                <h1 style={{
                 color: '#3b7fe4'
-              }}>ZuckAds</h1>
+              }} className="font-bold text-4xl">ZuckAds</h1>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
                 {zuckSafeAdsFeatures.map((feature, index) => <Card key={index} className="bg-gray-800/50 border-gray-700 hover:border-green-400 transition-all duration-300 hover:scale-105 animate-fade-in">
