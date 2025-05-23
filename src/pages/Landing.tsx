@@ -3,8 +3,10 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Shield, Eye, Users, CreditCard, FileText, Image, BarChart, Zap, BookOpen, Lock } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+
 const Landing = () => {
   const navigate = useNavigate();
+  
   const zuckSafeFeatures = [{
     icon: <Image className="w-8 h-8" />,
     title: "Otimização de Criativos",
@@ -30,6 +32,7 @@ const Landing = () => {
     title: "Cloaker Zuck",
     description: "Códigos inteligentes para redirecionamento com ajuste de rotas e dispositivos"
   }];
+  
   const zuckSafeAdsFeatures = [{
     icon: <Users className="w-8 h-8" />,
     title: "Perfis Ads Otimizados",
@@ -39,41 +42,61 @@ const Landing = () => {
     title: "Dados Estratégicos",
     description: "Perfis com parâmetros ideais para performance e estruturação"
   }];
-  return <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
-      {/* Header */}
-      <header className="border-b border-gray-800 bg-transparent backdrop-blur-sm">
+  
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
+      {/* Header - Transparente e sobreposto */}
+      <header className="absolute top-0 left-0 w-full z-50 bg-transparent backdrop-blur-sm">
         <div className="container mx-auto px-4 py-2">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
               <img src="/lovable-uploads/c2e803d1-757b-4fdd-972b-bef45d34a3ab.png" alt="ZuckSafe Logo" className="h-[120px] w-auto -mb-6 -mt-6" />
             </div>
+            
+            <div className="flex flex-col items-center">
+              <h1 className="text-2xl md:text-3xl font-bold" style={{ color: '#1BB98B' }}>
+                Todas soluções
+              </h1>
+              <h2 className="text-lg md:text-xl font-bold" style={{ color: '#1BB98B' }}>
+                em uma só plataforma
+              </h2>
+            </div>
+            
             <div className="flex space-x-4">
-              
-              
+              <Button 
+                size="lg" 
+                onClick={() => window.open('https://pay.perfectpay.com.br', '_blank')}
+                className="bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white font-bold"
+              >
+                Adquirir Agora
+              </Button>
             </div>
           </div>
         </div>
       </header>
 
-      {/* Hero Section with Background Image */}
-      <section className="relative py-32 px-4 overflow-hidden">
+      {/* Hero Section - Grudada no topo */}
+      <section className="relative w-full h-screen top-0 overflow-hidden">
         {/* Background Image */}
-        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
-        backgroundImage: `url('/lovable-uploads/ecf4153f-8771-41f5-be83-039d3fa203a8.png')`
-      }}>
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="/lovable-uploads/ecf4153f-8771-41f5-be83-039d3fa203a8.png" 
+            alt="Background" 
+            className="absolute inset-0 w-full h-full object-cover"
+          />
           {/* Gradient overlay from bottom to middle */}
           <div className="absolute inset-0" style={{
-          background: `linear-gradient(to top, #06090f 0%, #06090f 25%, transparent 50%)`
-        }}></div>
+            background: `linear-gradient(to top, #06090f 0%, #06090f 25%, transparent 50%)`
+          }}></div>
         </div>
         
         {/* Content */}
-        <div className="container mx-auto text-center relative z-10">
+        <div className="container mx-auto text-center relative z-10 flex flex-col justify-center h-full pt-32">
           <div className="flex justify-center flex-col items-center mb-8">
-            <h1 className="text-6xl md:text-8xl font-bold mb-4" style={{ color: '#1BB98B' }}>
+            <h1 className="text-6xl md:text-8xl font-bold mb-4 font-gt-super" style={{ color: '#1BB98B' }}>
               Todas soluções
             </h1>
-            <h2 className="text-4xl md:text-6xl font-bold" style={{ color: '#1BB98B' }}>
+            <h2 className="text-4xl md:text-6xl font-bold font-gt-super" style={{ color: '#1BB98B' }}>
               em uma só plataforma
             </h2>
           </div>
@@ -83,13 +106,13 @@ const Landing = () => {
           
           {/* CTA Button */}
           <Button size="lg" onClick={() => {
-          const sectionToScrollTo = document.getElementById('products-section');
-          if (sectionToScrollTo) {
-            sectionToScrollTo.scrollIntoView({
-              behavior: 'smooth'
-            });
-          }
-        }} className="animate-fade-in bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white font-bold">
+            const sectionToScrollTo = document.getElementById('products-section');
+            if (sectionToScrollTo) {
+              sectionToScrollTo.scrollIntoView({
+                behavior: 'smooth'
+              });
+            }
+          }} className="animate-fade-in bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white font-bold">
             Conheça Nossos Produtos
           </Button>
         </div>
@@ -253,6 +276,8 @@ const Landing = () => {
           </div>
         </div>
       </footer>
-    </div>;
+    </div>
+  );
 };
+
 export default Landing;
