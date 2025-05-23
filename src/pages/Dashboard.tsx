@@ -84,7 +84,7 @@ const Dashboard = () => {
       <header className="border-b border-gray-800 bg-black/50 backdrop-blur-sm">
         <div className="flex items-center justify-between px-6 py-4">
           <div className="flex items-center space-x-2">
-            <img src="/lovable-uploads/c2e803d1-757b-4fdd-972b-bef45d34a3ab.png" alt="ZuckSafe Logo" className="h-[100px] w-auto" />
+            <img src="/lovable-uploads/c2e803d1-757b-4fdd-972b-bef45d34a3ab.png" alt="ZuckSafe Logo" className="h-[100px] w-auto -mb-8 -mt-8 -ml-2" />
           </div>
           <div className="flex items-center space-x-4">
             <span className="text-gray-400 text-sm">{userEmail}</span>
