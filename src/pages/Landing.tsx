@@ -177,7 +177,7 @@ const Landing = () => {
                 <Button size="lg" onClick={() => window.open('https://pay.perfectpay.com.br', '_blank')} className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-bold py-8 text-lg">
                   ADQUIRA O COMBO COMPLETO AGORA
                 </Button>
-                <p className="text-lg font-semibold text-transparent bg-gradient-to-r from-pink-400 to-blue-400 bg-clip-text">
+                <p className="text-lg font-semibold text-transparent bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text">
                   Acesso vitalício por apenas R$147,90
                 </p>
               </CardContent>
