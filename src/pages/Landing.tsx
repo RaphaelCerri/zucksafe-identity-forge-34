@@ -138,10 +138,10 @@ const Landing = () => {
             <Card className="bg-gray-800/50 border-gray-700 hover:border-cyan-400 transition-all duration-300 p-6 animate-fade-in">
               <CardContent className="p-0 space-y-6">
                 <div className="flex justify-center">
-                  <img src="/lovable-uploads/c2e803d1-757b-4fdd-972b-bef45d34a3ab.png" alt="ZuckSafe Logo" className="h-[150px] w-auto" />
+                  <img src="/lovable-uploads/c2e803d1-757b-4fdd-972b-bef45d34a3ab.png" alt="ZuckSafe Logo" className="h-[150px] w-auto -mb-12 -mt-12" />
                 </div>
                 
-                <p className="text-gray-300">Plataforma completa para geração de dados, cartões para validação, contas auxiliares, e otimização de elementos visuais e textuais.</p>
+                <p className="text-gray-300 text-sm">Plataforma completa para geração de dados, cartões para validação, contas auxiliares, e otimização de elementos visuais e textuais.</p>
                 <Button size="lg" className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-black font-bold py-6" onClick={() => window.open('https://pay.perfectpay.com.br', '_blank')}>ADIQUIRIR SEU ACESSO AGORA</Button>
                 <p className="text-sm text-gray-500">Acesso vitalício por R$97,90</p>
               </CardContent>
@@ -151,10 +151,10 @@ const Landing = () => {
             <Card className="bg-gray-800/50 border-gray-700 hover:border-green-400 transition-all duration-300 p-6 animate-fade-in">
               <CardContent className="p-0 space-y-6">
                 <div className="flex justify-center">
-                  <img src="/lovable-uploads/8c3894ed-1b41-4b5d-ae03-3d94ab889c03.png" alt="ZuckSafeAds Logo" className="h-[150px] w-auto" />
+                  <img src="/lovable-uploads/8c3894ed-1b41-4b5d-ae03-3d94ab889c03.png" alt="ZuckSafeAds Logo" className="h-[150px] w-auto -mb-12 -mt-12" />
                 </div>
                 
-                <p className="text-gray-300">Ambiente especializado para criação automatizada de perfis com estrutura otimizada para validação de campanhas em plataformas de anúncios.</p>
+                <p className="text-gray-300 text-sm">Ambiente especializado para criação automatizada de perfis com estrutura otimizada para validação de campanhas em plataformas de anúncios.</p>
                 <Button size="lg" className="w-full bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-black font-bold py-6" onClick={() => window.open('https://pay.perfectpay.com.br', '_blank')}>CRIAR PERFIS OTIMIZADOS AGORA</Button>
                 <p className="text-sm text-gray-500">Acesso vitalício por R$97,90</p>
               </CardContent>
@@ -165,7 +165,7 @@ const Landing = () => {
           <div className="max-w-6xl mx-auto mb-16">
             <Card className="bg-gray-800/50 border-2 border-pink-400 hover:border-blue-400 transition-all duration-300 p-6 animate-fade-in shadow-xl shadow-pink-500/10">
               <CardContent className="p-0 space-y-6">
-                <div className="flex justify-center">
+                <div className="flex justify-center -mb-14 -mt-10">
                   <div className="flex items-center space-x-3">
                     <img src="/lovable-uploads/c2e803d1-757b-4fdd-972b-bef45d34a3ab.png" alt="ZuckSafe Logo" className="h-[150px] w-auto" />
                     <span className="text-3xl font-bold text-white">+</span>
