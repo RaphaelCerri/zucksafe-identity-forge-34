@@ -150,15 +150,7 @@ const Landing = () => {
       </section>
 
       {/* Legal Notice */}
-      <section className="py-16 px-4 bg-gray-900/50">
-        <div className="container mx-auto text-center max-w-4xl">
-          <h2 className="text-2xl font-bold text-white mb-4">Aviso Legal</h2>
-          <p className="text-gray-400">
-            Ambas as plataformas são voltadas para testes, educação e simulações. 
-            Nenhuma informação deve ser utilizada para finalidades ilegais.
-          </p>
-        </div>
-      </section>
+      
 
       {/* Footer */}
       <footer className="border-t border-gray-800 bg-black py-8 px-4">
