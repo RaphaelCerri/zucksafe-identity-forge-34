@@ -27,7 +27,7 @@ const Dashboard = () => {
     { id: 'data', name: 'Dados Brasileiros', icon: <Users className="w-5 h-5" />, component: DataGenerator },
     { id: 'cards', name: 'Cartões de Teste', icon: <CreditCard className="w-5 h-5" />, component: CardGenerator },
     { id: 'accounts', name: 'Contas Falsas', icon: <Users className="w-5 h-5" />, component: AccountGenerator },
-    { id: 'cloaker', name: 'Simulador Cloaker', icon: <Eye className="w-5 h-5" />, component: CloakerSimulator }
+    { id: 'cloaker', name: 'Cloaker Safe', icon: <Eye className="w-5 h-5" />, component: CloakerSimulator }
   ];
 
   const renderContent = () => {
