@@ -141,7 +141,7 @@ const Landing = () => {
           
           {/* Combo Zuck Card - Full Width */}
           <div className="max-w-6xl mx-auto mb-16">
-            <Card className="bg-gray-800/50 border-2 border-red-400 hover:border-purple-400 transition-all duration-300 p-6 animate-fade-in shadow-xl shadow-red-500/10 py-[48px]">
+            <Card className="bg-gray-800/50 border-2 border-red-500 hover:border-purple-400 transition-all duration-300 p-6 animate-fade-in shadow-xl shadow-red-500/10 py-[48px]">
               <CardContent className="p-0 space-y-6">
                 <div className="flex justify-center -mb-1 -mt-6 my-0">
                   <div className="flex items-center space-x-3">
@@ -174,7 +174,7 @@ const Landing = () => {
                     <span className="text-gray-300">Economia de 25%</span>
                   </div>
                 </div>
-                <Button size="lg" onClick={() => window.open('https://pay.perfectpay.com.br', '_blank')} className="w-full bg-gradient-to-r from-red-500 via-purple-500 to-purple-500 hover:from-red-600 hover:via-purple-600 hover:to-purple-600 text-white font-bold py-8 text-lg">
+                <Button size="lg" onClick={() => window.open('https://pay.perfectpay.com.br', '_blank')} className="w-full bg-gradient-to-r from-red-500 via-purple-500 to-purple-500 hover:from-red-500 hover:via-purple-600 hover:to-purple-600 text-white font-bold py-8 text-lg">
                   ADQUIRA O COMBO COMPLETO AGORA
                 </Button>
                 <p className="text-lg font-semibold text-transparent bg-gradient-to-r from-pink-400 to-blue-400 bg-clip-text">
