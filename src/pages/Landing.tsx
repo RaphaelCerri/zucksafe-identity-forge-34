@@ -204,7 +204,7 @@ const Landing = () => {
           
           {/* Features */}
           <div className="mt-20">
-            <h2 className="text-3xl font-bold text-white mb-16">Nossas Soluções</h2>
+            <h2 className="text-3xl font-bold text-white mb-16">Funcionalidades</h2>
             
             {/* ZuckSafe Features */}
             <div className="mb-20">
