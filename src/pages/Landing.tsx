@@ -1,61 +1,45 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Shield, Eye, Users, CreditCard, FileText, Image, BarChart } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-
 const Landing = () => {
   const navigate = useNavigate();
-
-  const zuckSafeFeatures = [
-    {
-      icon: <Image className="w-8 h-8" />,
-      title: "Refinador de Criativos",
-      description: "Remove metadados e altera hash das imagens para evitar detecção"
-    },
-    {
-      icon: <FileText className="w-8 h-8" />,
-      title: "Refinador de Texto", 
-      description: "Modifica textos com caracteres unicode invisíveis"
-    },
-    {
-      icon: <Users className="w-8 h-8" />,
-      title: "Dados Brasileiros",
-      description: "Gera CPF, endereços, nomes e dados completos válidos"
-    },
-    {
-      icon: <CreditCard className="w-8 h-8" />,
-      title: "Cartões de Teste",
-      description: "Números de cartão válidos para testes de anúncios"
-    },
-    {
-      icon: <Shield className="w-8 h-8" />,
-      title: "Contas Falsas",
-      description: "Emails e perfis para Gmail, Facebook e Instagram"
-    },
-    {
-      icon: <Eye className="w-8 h-8" />,
-      title: "Simulador Cloaker",
-      description: "Códigos de redirecionamento prontos para usar"
-    }
-  ];
-
-  const zuckSafeAdsFeatures = [
-    {
-      icon: <Users className="w-8 h-8" />,
-      title: "Contas Ads Aquecidas",
-      description: "Contas simuladas com alto limite de Business Managers"
-    },
-    {
-      icon: <BarChart className="w-8 h-8" />,
-      title: "Dados Estratégicos",
-      description: "Perfis otimizados para performance em campanhas"
-    }
-  ];
-
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
+  const zuckSafeFeatures = [{
+    icon: <Image className="w-8 h-8" />,
+    title: "Refinador de Criativos",
+    description: "Remove metadados e altera hash das imagens para evitar detecção"
+  }, {
+    icon: <FileText className="w-8 h-8" />,
+    title: "Refinador de Texto",
+    description: "Modifica textos com caracteres unicode invisíveis"
+  }, {
+    icon: <Users className="w-8 h-8" />,
+    title: "Dados Brasileiros",
+    description: "Gera CPF, endereços, nomes e dados completos válidos"
+  }, {
+    icon: <CreditCard className="w-8 h-8" />,
+    title: "Cartões de Teste",
+    description: "Números de cartão válidos para testes de anúncios"
+  }, {
+    icon: <Shield className="w-8 h-8" />,
+    title: "Contas Falsas",
+    description: "Emails e perfis para Gmail, Facebook e Instagram"
+  }, {
+    icon: <Eye className="w-8 h-8" />,
+    title: "Simulador Cloaker",
+    description: "Códigos de redirecionamento prontos para usar"
+  }];
+  const zuckSafeAdsFeatures = [{
+    icon: <Users className="w-8 h-8" />,
+    title: "Contas Ads Aquecidas",
+    description: "Contas simuladas com alto limite de Business Managers"
+  }, {
+    icon: <BarChart className="w-8 h-8" />,
+    title: "Dados Estratégicos",
+    description: "Perfis otimizados para performance em campanhas"
+  }];
+  return <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
       {/* Header */}
       <header className="border-b border-gray-800 bg-black/50 backdrop-blur-sm">
         <div className="container mx-auto px-4 py-4">
@@ -67,20 +51,8 @@ const Landing = () => {
               </span>
             </div>
             <div className="flex space-x-4">
-              <Button 
-                onClick={() => navigate('/painel-zuck-safe-login-plataforma-digital')}
-                variant="outline" 
-                className="border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black"
-              >
-                Login ZuckSafe
-              </Button>
-              <Button 
-                onClick={() => navigate('/painel-zuck-safe-ads-login-plataforma-digital')}
-                variant="outline" 
-                className="border-green-400 text-green-400 hover:bg-green-400 hover:text-black"
-              >
-                Login ZuckSafeAds
-              </Button>
+              
+              
             </div>
           </div>
         </div>
@@ -109,11 +81,7 @@ const Landing = () => {
                 <p className="text-gray-300">
                   Plataforma completa para geração de dados falsos, cartões de teste, contas simuladas e refinamento de criativos.
                 </p>
-                <Button 
-                  size="lg"
-                  className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-black font-bold py-6"
-                  onClick={() => window.open('https://pay.perfectpay.com.br', '_blank')}
-                >
+                <Button size="lg" className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-black font-bold py-6" onClick={() => window.open('https://pay.perfectpay.com.br', '_blank')}>
                   GERAR IDENTIDADES FALSAS AGORA
                 </Button>
                 <p className="text-sm text-gray-500">
@@ -134,11 +102,7 @@ const Landing = () => {
                 <p className="text-gray-300">
                   Ferramenta especializada para criação de contas de anúncios simuladas com alto limite de Business Managers.
                 </p>
-                <Button 
-                  size="lg"
-                  className="w-full bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-black font-bold py-6"
-                  onClick={() => window.open('https://pay.perfectpay.com.br', '_blank')}
-                >
+                <Button size="lg" className="w-full bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-black font-bold py-6" onClick={() => window.open('https://pay.perfectpay.com.br', '_blank')}>
                   CRIAR CONTAS AQUECIDAS E ESTRATÉGICAS
                 </Button>
                 <p className="text-sm text-gray-500">
@@ -156,8 +120,7 @@ const Landing = () => {
             <div className="mb-20">
               <h3 className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-8">ZuckSafe</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-                {zuckSafeFeatures.map((feature, index) => (
-                  <Card key={index} className="bg-gray-800/50 border-gray-700 hover:border-cyan-400 transition-all duration-300 hover:scale-105 animate-fade-in">
+                {zuckSafeFeatures.map((feature, index) => <Card key={index} className="bg-gray-800/50 border-gray-700 hover:border-cyan-400 transition-all duration-300 hover:scale-105 animate-fade-in">
                     <CardContent className="p-6 text-center">
                       <div className="text-cyan-400 mb-4 flex justify-center">
                         {feature.icon}
@@ -165,8 +128,7 @@ const Landing = () => {
                       <h3 className="text-xl font-bold text-white mb-2">{feature.title}</h3>
                       <p className="text-gray-400">{feature.description}</p>
                     </CardContent>
-                  </Card>
-                ))}
+                  </Card>)}
               </div>
             </div>
             
@@ -174,8 +136,7 @@ const Landing = () => {
             <div>
               <h3 className="text-2xl font-bold bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent mb-8">ZuckSafeAds</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-                {zuckSafeAdsFeatures.map((feature, index) => (
-                  <Card key={index} className="bg-gray-800/50 border-gray-700 hover:border-green-400 transition-all duration-300 hover:scale-105 animate-fade-in">
+                {zuckSafeAdsFeatures.map((feature, index) => <Card key={index} className="bg-gray-800/50 border-gray-700 hover:border-green-400 transition-all duration-300 hover:scale-105 animate-fade-in">
                     <CardContent className="p-6 text-center">
                       <div className="text-green-400 mb-4 flex justify-center">
                         {feature.icon}
@@ -183,8 +144,7 @@ const Landing = () => {
                       <h3 className="text-xl font-bold text-white mb-2">{feature.title}</h3>
                       <p className="text-gray-400">{feature.description}</p>
                     </CardContent>
-                  </Card>
-                ))}
+                  </Card>)}
               </div>
             </div>
           </div>
@@ -214,8 +174,6 @@ const Landing = () => {
           </p>
         </div>
       </footer>
-    </div>
-  );
+    </div>;
 };
-
 export default Landing;
