@@ -159,7 +159,7 @@ const Landing = () => {
                 </div>
                 <h2 className="font-bold bg-gradient-to-r from-red-400 via-red-400 to-purple-400 bg-clip-text text-3xl sm:text-4xl text-amber-500">🔥 Combo Zuck 🔥</h2>
                 <p className="text-gray-200 text-lg sm:text-xl px-4 sm:px-0">Acesso completo a ambas as plataformas com preço especial e benefícios exclusivos.</p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-4 py-2 px-[10px]">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-4 py-[3px] px-[65px] justify-items-center">
                   <div className="flex items-center space-x-2">
                     <Shield className="w-4 h-4 sm:w-5 sm:h-5 text-orange-400" />
                     <span className="text-gray-300 text-sm sm:text-base">Painel ZuckSafe completo</span>
