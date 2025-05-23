@@ -30,13 +30,14 @@ const LoginAds = () => {
       <div className="w-full max-w-md">
         {/* Logo */}
         <div className="text-center mb-8">
-          <div className="flex items-center justify-center space-x-2 mb-4">
-            <BarChart className="w-10 h-10 text-green-400" />
-            <span className="text-3xl font-bold bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
-              ZuckSafeAds
-            </span>
+          <div className="flex flex-col items-center justify-center mb-4">
+            <img 
+              src="/lovable-uploads/8c3894ed-1b41-4b5d-ae03-3d94ab889c03.png" 
+              alt="ZuckSafeAds Logo" 
+              className="h-16 w-auto mb-2" 
+            />
+            <p className="text-gray-400">Acesse sua conta para continuar</p>
           </div>
-          <p className="text-gray-400">Acesse sua conta para continuar</p>
         </div>
 
         {/* Login Card */}

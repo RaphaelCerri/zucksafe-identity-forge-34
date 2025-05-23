@@ -70,10 +70,11 @@ const DashboardAds = () => {
       <header className="border-b border-gray-800 bg-black/50 backdrop-blur-sm">
         <div className="flex items-center justify-between px-6 py-4">
           <div className="flex items-center space-x-2">
-            <BarChart className="w-8 h-8 text-green-400" />
-            <span className="text-2xl font-bold bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
-              ZuckSafeAds
-            </span>
+            <img 
+              src="/lovable-uploads/8c3894ed-1b41-4b5d-ae03-3d94ab889c03.png" 
+              alt="ZuckSafeAds Logo" 
+              className="h-8 w-auto" 
+            />
           </div>
           <div className="flex items-center space-x-4">
             <span className="text-gray-400 text-sm">{userEmail}</span>

@@ -30,13 +30,14 @@ const Login = () => {
       <div className="w-full max-w-md">
         {/* Logo */}
         <div className="text-center mb-8">
-          <div className="flex items-center justify-center space-x-2 mb-4">
-            <Shield className="w-10 h-10 text-cyan-400" />
-            <span className="text-3xl font-bold bg-gradient-to-r from-cyan-400 to-green-400 bg-clip-text text-transparent">
-              ZuckSafe
-            </span>
+          <div className="flex flex-col items-center justify-center mb-4">
+            <img 
+              src="/lovable-uploads/c2e803d1-757b-4fdd-972b-bef45d34a3ab.png" 
+              alt="ZuckSafe Logo" 
+              className="h-16 w-auto mb-2" 
+            />
+            <p className="text-gray-400">Acesse sua conta para continuar</p>
           </div>
-          <p className="text-gray-400">Acesse sua conta para continuar</p>
         </div>
 
         {/* Login Card */}

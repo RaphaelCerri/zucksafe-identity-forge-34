@@ -78,10 +78,11 @@ const Dashboard = () => {
       <header className="border-b border-gray-800 bg-black/50 backdrop-blur-sm">
         <div className="flex items-center justify-between px-6 py-4">
           <div className="flex items-center space-x-2">
-            <Shield className="w-8 h-8 text-cyan-400" />
-            <span className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-green-400 bg-clip-text text-transparent">
-              ZuckSafe
-            </span>
+            <img 
+              src="/lovable-uploads/c2e803d1-757b-4fdd-972b-bef45d34a3ab.png" 
+              alt="ZuckSafe Logo" 
+              className="h-8 w-auto" 
+            />
           </div>
           <div className="flex items-center space-x-4">
             <span className="text-gray-400 text-sm">{userEmail}</span>
