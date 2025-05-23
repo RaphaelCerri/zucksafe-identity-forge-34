@@ -3,10 +3,8 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Shield, Eye, Users, CreditCard, FileText, Image, BarChart, Zap, BookOpen, Lock } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-
 const Landing = () => {
   const navigate = useNavigate();
-  
   const zuckSafeFeatures = [{
     icon: <Image className="w-8 h-8" />,
     title: "Otimização de Criativos",
@@ -32,7 +30,6 @@ const Landing = () => {
     title: "Cloaker Zuck",
     description: "Códigos inteligentes para redirecionamento com ajuste de rotas e dispositivos"
   }];
-  
   const zuckSafeAdsFeatures = [{
     icon: <Users className="w-8 h-8" />,
     title: "Perfis Ads Otimizados",
@@ -42,7 +39,6 @@ const Landing = () => {
     title: "Dados Estratégicos",
     description: "Perfis com parâmetros ideais para performance e estruturação"
   }];
-  
   return <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
       {/* Header - 100% Transparente e sobreposto */}
       <header className="absolute top-0 left-0 w-full z-50 bg-transparent">
@@ -181,7 +177,7 @@ const Landing = () => {
                     <span className="text-gray-300 text-sm sm:text-base">Economia de 25%</span>
                   </div>
                 </div>
-                <Button size="lg" onClick={() => window.open('https://pay.perfectpay.com.br', '_blank')} className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-bold py-6 sm:py-8 text-base sm:text-lg">
+                <Button size="lg" onClick={() => window.open('https://pay.perfectpay.com.br', '_blank')} className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-bold py-6 sm:py-8 sm:text-lg text-xs">
                   ADQUIRA O COMBO COMPLETO AGORA
                 </Button>
                 <p className="text-base sm:text-lg font-semibold bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-gray-300">
@@ -261,5 +257,4 @@ const Landing = () => {
       </footer>
     </div>;
 };
-
 export default Landing;
