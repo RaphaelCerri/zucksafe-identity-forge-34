@@ -27,7 +27,7 @@ const Landing = () => {
     description: "Emails e perfis para Gmail, Facebook e Instagram"
   }, {
     icon: <Eye className="w-8 h-8" />,
-    title: "Simulador Cloaker",
+    title: "Cloaker Safe",
     description: "Códigos de redirecionamento prontos para usar"
   }];
   const zuckSafeAdsFeatures = [{

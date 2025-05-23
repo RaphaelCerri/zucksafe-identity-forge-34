@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -9,7 +8,34 @@ const CardGenerator = () => {
   const [cards, setCards] = useState<any[]>([]);
   const [isGenerating, setIsGenerating] = useState(false);
   const [quantity, setQuantity] = useState(1);
+  const [usedNames, setUsedNames] = useState<string[]>([]);
   const { toast } = useToast();
+
+  // Large pool of Brazilian names to avoid repetition
+  const firstNames = [
+    'Ana', 'João', 'Maria', 'Pedro', 'Luísa', 'Carlos', 'Fernanda', 'Rafael', 
+    'Juliana', 'Lucas', 'Mariana', 'Gustavo', 'Patrícia', 'Rodrigo', 'Camila', 
+    'Eduardo', 'Vanessa', 'Marcelo', 'Beatriz', 'Felipe', 'Larissa', 'Ricardo', 
+    'Amanda', 'Daniel', 'Natália', 'Paulo', 'Carolina', 'Diego', 'Letícia', 'Bruno',
+    'Aline', 'Matheus', 'Gabriela', 'Leonardo', 'Renata', 'Alexandre', 'Mônica', 'André',
+    'Débora', 'Vinícius', 'Jéssica', 'Fábio', 'Luciana', 'Roberto', 'Thaís', 'Thiago',
+    'Eliane', 'Fernando', 'Carla', 'Guilherme', 'Roberta', 'Júlio', 'Flávia', 'Marcos',
+    'Tatiana', 'Leandro', 'Érica', 'Victor', 'Cristina', 'Jorge', 'Daniela', 'Samuel',
+    'Michele', 'Hugo', 'Sônia', 'Raul', 'Verônica', 'José', 'Cláudia', 'César',
+    'Regina', 'Márcio', 'Adriana', 'Henrique', 'Bianca', 'Antônio', 'Silvia', 'Maurício'
+  ];
+
+  const lastNames = [
+    'Silva', 'Santos', 'Oliveira', 'Souza', 'Rodrigues', 'Ferreira', 'Alves', 'Pereira',
+    'Lima', 'Gomes', 'Costa', 'Ribeiro', 'Martins', 'Carvalho', 'Almeida', 'Lopes', 
+    'Soares', 'Fernandes', 'Vieira', 'Barbosa', 'Rocha', 'Dias', 'Nascimento', 'Andrade',
+    'Moreira', 'Nunes', 'Marques', 'Machado', 'Mendes', 'Freitas', 'Cardoso', 'Ramos',
+    'Gonçalves', 'Araújo', 'Pinto', 'Monteiro', 'Cavalcanti', 'Correia', 'Teixeira', 'Medeiros',
+    'Moraes', 'Pires', 'Duarte', 'Borges', 'Nogueira', 'Castro', 'Miranda', 'Campos',
+    'Brito', 'Guimarães', 'Melo', 'Reis', 'Azevedo', 'Barros', 'Bezerra', 'Xavier',
+    'Salles', 'Mesquita', 'Vasconcelos', 'Cordeiro', 'Fonseca', 'Toledo', 'Coelho', 'Dutra',
+    'Assunção', 'Pacheco', 'Siqueira', 'Bueno', 'Braga', 'Mattos', 'Faria', 'Cruz'
+  ];
 
   const generateCardNumber = () => {
     // Gera número com algoritmo de Luhn
@@ -42,9 +68,34 @@ const CardGenerator = () => {
     return number.replace(/(\d{4})(\d{4})(\d{4})(\d{4})/, '$1 $2 $3 $4');
   };
 
+  const getRandomName = () => {
+    // Generate a pool of possible names
+    const possibleNames = [];
+    
+    // Create at least 100 possible combinations to choose from
+    for (let i = 0; i < 100; i++) {
+      const firstName = firstNames[Math.floor(Math.random() * firstNames.length)];
+      const lastName = lastNames[Math.floor(Math.random() * lastNames.length)];
+      possibleNames.push(`${firstName} ${lastName}`);
+    }
+    
+    // Filter out names that have been used already
+    const availableNames = possibleNames.filter(name => !usedNames.includes(name));
+    
+    // If we've somehow used all names, reset the used names
+    if (availableNames.length === 0) {
+      setUsedNames([]);
+      return possibleNames[0];
+    }
+    
+    const randomName = availableNames[Math.floor(Math.random() * availableNames.length)];
+    return randomName;
+  };
+
   const generateCard = () => {
-    const names = ['Ana Silva', 'Carlos Santos', 'Maria Oliveira', 'João Souza', 'Fernanda Lima'];
-    const name = names[Math.floor(Math.random() * names.length)];
+    const name = getRandomName();
+    setUsedNames(prev => [...prev, name]);
+    
     const currentYear = new Date().getFullYear();
     const expYear = currentYear + Math.floor(Math.random() * 5) + 1;
     const expMonth = 1 + Math.floor(Math.random() * 12);
