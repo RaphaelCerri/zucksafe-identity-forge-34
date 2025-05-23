@@ -235,7 +235,7 @@ Proxy: ${account.proxy.ip} (${account.proxy.country}, ${account.proxy.type})`;
           <Button 
             onClick={generateSingleAccount}
             disabled={isGenerating}
-            className="bg-gradient-to-r from-emerald-500 to-green-500 hover:from-emerald-600 hover:to-green-600 text-black font-bold"
+            className="bg-gradient-to-r from-sky-400 to-sky-500 hover:from-sky-500 hover:to-sky-600 text-black font-bold"
           >
             {isGenerating ? (
               <div className="flex items-center space-x-2">
@@ -253,7 +253,7 @@ Proxy: ${account.proxy.ip} (${account.proxy.country}, ${account.proxy.type})`;
           <Button 
             onClick={generateAccounts}
             disabled={isGenerating}
-            className="bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-black font-bold"
+            className="bg-gradient-to-r from-sky-500 to-sky-400 hover:from-sky-600 hover:to-sky-500 text-black font-bold"
           >
             {isGenerating ? (
               <div className="flex items-center space-x-2">
@@ -276,7 +276,7 @@ Proxy: ${account.proxy.ip} (${account.proxy.country}, ${account.proxy.type})`;
             <p className="text-white">{accounts.length} conta(s) gerada(s) para {platforms.find(p => p.id === platform)?.name}</p>
             <Button
               onClick={exportAccounts}
-              className="bg-emerald-500 hover:bg-emerald-600 text-black font-bold"
+              className="bg-sky-500 hover:bg-sky-600 text-black font-bold"
             >
               <Download className="w-4 h-4 mr-2" />
               Exportar CSV
@@ -296,7 +296,7 @@ Proxy: ${account.proxy.ip} (${account.proxy.country}, ${account.proxy.type})`;
                       size="sm"
                       variant="outline"
                       onClick={() => copyAccount(account)}
-                      className="border-gray-600 text-gray-400 hover:bg-green-500 hover:border-green-500 hover:text-black"
+                      className="border-gray-600 text-gray-400 hover:bg-sky-500 hover:border-sky-500 hover:text-black"
                     >
                       <Copy className="w-3 h-3" />
                     </Button>
@@ -334,7 +334,7 @@ Proxy: ${account.proxy.ip} (${account.proxy.country}, ${account.proxy.type})`;
                     </div>
                     <div>
                       <p className="text-gray-400 text-xs">STATUS</p>
-                      <p className={`font-medium ${account.status === 'Aquecida' ? 'text-green-400' : 'text-yellow-400'}`}>
+                      <p className={`font-medium ${account.status === 'Aquecida' ? 'text-sky-400' : 'text-yellow-400'}`}>
                         {account.status}
                       </p>
                     </div>
@@ -346,8 +346,8 @@ Proxy: ${account.proxy.ip} (${account.proxy.country}, ${account.proxy.type})`;
                       <div className="h-2 w-full bg-gray-700 rounded-full overflow-hidden">
                         <div 
                           className={`h-full ${
-                            account.healthScore > 90 ? 'bg-green-500' : 
-                            account.healthScore > 80 ? 'bg-green-400' : 'bg-yellow-400'
+                            account.healthScore > 90 ? 'bg-sky-500' : 
+                            account.healthScore > 80 ? 'bg-sky-400' : 'bg-yellow-400'
                           }`}
                           style={{ width: `${account.healthScore}%` }}
                         />
