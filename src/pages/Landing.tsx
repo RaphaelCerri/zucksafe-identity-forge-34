@@ -49,7 +49,7 @@ const Landing = () => {
             </div>
             
             <div className="flex space-x-4">
-              <Button size="lg" onClick={() => window.open('https://pay.perfectpay.com.br', '_blank')} className="bg-white/40 border-2 border-white text-white font-bold w-auto transition duration-300 ease-in-out hover:bg-white/10 text-xs sm:text-sm md:text-base px-3 py-2 sm:px-6 sm:py-3 md:px-8 md:py-3">Comprar Agora</Button>
+              <Button size="lg" onClick={() => window.open('https://go.perfectpay.com.br/PPU38CPPB6O', '_blank')} className="bg-white/40 border-2 border-white text-white font-bold w-auto transition duration-300 ease-in-out hover:bg-white/10 text-xs sm:text-sm md:text-base px-3 py-2 sm:px-6 sm:py-3 md:px-8 md:py-3">Comprar Agora</Button>
             </div>
           </div>
         </div>
@@ -69,8 +69,8 @@ const Landing = () => {
         {/* Content */}
         <div className="container mx-auto text-center relative z-10 flex flex-col justify-center h-full pt-32">
           <div className="flex justify-center flex-col items-center mb-8">
-            <h1 className="font-bold font-mono -mb-2 text-white text-3xl sm:text-2xl md:text-4xl lg:text-5xl xl:text-6xl">Todas soluções</h1>
-            <h2 className="font-mono font-bold text-white text-2xl sm:text-xl md:text-3xl lg:text-4xl xl:text-5xl">em uma só plataforma</h2>
+            <h1 className="font-bold font-mono -mb-2 text-white text-4xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">Todas soluções</h1>
+            <h2 className="font-mono font-bold text-white text-3xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl">em uma só plataforma</h2>
           </div>
           <p className="text-lg sm:text-base md:text-lg lg:text-xl text-gray-200 mb-12 max-w-4xl mx-auto animate-fade-in leading-relaxed px-4">
             Escolha sua plataforma: simule dados com precisão ou crie perfis otimizados para ambientes de validação de campanhas.
@@ -85,7 +85,7 @@ const Landing = () => {
                 behavior: 'smooth'
               });
             }
-          }} className="bg-transparent border-2 border-white text-white font-bold w-auto transition duration-300 ease-in-out hover:bg-white/10 text-lg sm:text-sm md:text-base px-6 py-4 sm:px-6 sm:py-3 md:px-8 md:py-3">
+          }} className="bg-transparent border-2 border-white text-white font-bold w-auto transition duration-300 ease-in-out hover:bg-white/10 text-xl sm:text-lg md:text-base px-8 py-5 sm:px-6 sm:py-3 md:px-8 md:py-3">
               Conheça Nossos Produtos
             </Button>
           </div>
@@ -121,7 +121,7 @@ const Landing = () => {
                 </div>
                 
                 <p className="text-gray-300 text-sm">Plataforma completa para geração de dados, cartões para validação, contas auxiliares, e otimização de elementos visuais e textuais.</p>
-                <Button size="lg" onClick={() => window.open('https://pay.perfectpay.com.br', '_blank')} className="w-full bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-black font-bold py-4 sm:py-6 bg-blue-500 hover:bg-blue-400 text-xs sm:text-sm md:text-base">
+                <Button size="lg" onClick={() => window.open('https://go.perfectpay.com.br/PPU38CPPB6O', '_blank')} className="w-full bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-black font-bold py-4 sm:py-6 bg-blue-500 hover:bg-blue-400 text-xs sm:text-sm md:text-base">
                   ADIQUIRIR SEU ACESSO AGORA
                 </Button>
                 <p className="text-xs sm:text-sm text-gray-300">Acesso vitalício por R$97,90</p>
@@ -136,7 +136,7 @@ const Landing = () => {
                 </div>
                 
                 <p className="text-gray-300 text-sm">Ambiente especializado para criação automatizada de perfis com estrutura otimizada para validação de campanhas em plataformas de anúncios.</p>
-                <Button size="lg" onClick={() => window.open('https://pay.perfectpay.com.br', '_blank')} className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-black font-bold py-4 sm:py-6 text-xs sm:text-sm md:text-base">
+                <Button size="lg" onClick={() => window.open('https://go.perfectpay.com.br/PPU38CPPB6S', '_blank')} className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-black font-bold py-4 sm:py-6 text-xs sm:text-sm md:text-base">
                   CRIAR PERFIS OTIMIZADOS AGORA
                 </Button>
                 <p className="text-xs sm:text-sm text-gray-300">Acesso vitalício por R$97,90</p>
@@ -175,7 +175,7 @@ const Landing = () => {
                     <span className="text-gray-300 text-sm sm:text-base">Economia de 25%</span>
                   </div>
                 </div>
-                <Button size="lg" onClick={() => window.open('https://pay.perfectpay.com.br', '_blank')} className="inline-flex items-center justify-center bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-bold py-4 px-4 text-xs md:py-6 md:px-8 md:text-xl lg:py-8 lg:px-10 lg:text-2xl rounded shadow-lg transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-orange-500">ADQUIRA O COMBO AGORA</Button>
+                <Button size="lg" onClick={() => window.open('https://go.perfectpay.com.br/PPU38CPPB72', '_blank')} className="inline-flex items-center justify-center bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-bold py-4 px-4 text-xs md:py-6 md:px-8 md:text-xl lg:py-8 lg:px-10 lg:text-2xl rounded shadow-lg transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-orange-500">ADQUIRA O COMBO AGORA</Button>
                 <p className="text-base sm:text-lg font-semibold bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-gray-300">
                   Acesso vitalício por apenas R$147,90
                 </p>
