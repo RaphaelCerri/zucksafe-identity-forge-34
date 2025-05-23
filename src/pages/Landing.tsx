@@ -77,14 +77,14 @@ const Landing = () => {
           </p>
           
           {/* CTA Button */}
-          <Button size="lg" className="animate-fade-in bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white font-bold" onClick={() => {
+          <Button size="lg" onClick={() => {
           const sectionToScrollTo = document.getElementById('products-section');
           if (sectionToScrollTo) {
             sectionToScrollTo.scrollIntoView({
               behavior: 'smooth'
             });
           }
-        }}>
+        }} className="animate-fade-in bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white font-bold">
             Conheça Nossos Produtos
           </Button>
         </div>
