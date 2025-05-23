@@ -62,9 +62,9 @@ const Landing = () => {
         backgroundImage: `url('/lovable-uploads/ecf4153f-8771-41f5-be83-039d3fa203a8.png')`
       }}>
           {/* Gradient overlay from bottom to middle */}
-          <div style={{
+          <div className="absolute inset-0" style={{
           background: `linear-gradient(to top, #06090f 0%, #06090f 25%, transparent 50%)`
-        }} className="absolute inset-0 z-0"></div>
+        }}></div>
         </div>
         
         {/* Content */}
