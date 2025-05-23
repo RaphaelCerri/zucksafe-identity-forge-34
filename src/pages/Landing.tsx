@@ -114,7 +114,7 @@ const Landing = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12 mb-16 max-w-6xl mx-auto">
             {/* ZuckSafe Card */}
-            <Card className="bg-gray-800/50 border-gray-700 hover:border-cyan-400 transition-all duration-300 p-4 sm:p-6 animate-fade-in">
+            <Card className="bg-gray-800/50 border-gray-700 hover:border-green-400 transition-all duration-300 p-4 sm:p-6 animate-fade-in px-[35px]">
               <CardContent className="p-0 space-y-4 sm:space-y-6">
                 <div className="flex justify-center">
                   <h1 className="font-bold text-3xl sm:text-4xl text-green-500">ZuckSafe</h1>
@@ -129,7 +129,7 @@ const Landing = () => {
             </Card>
             
             {/* ZuckSafeAds Card */}
-            <Card className="bg-gray-800/50 border-gray-700 hover:border-green-400 transition-all duration-300 p-4 sm:p-6 animate-fade-in">
+            <Card className="bg-gray-800/50 border-gray-700 hover:border-cyan-400 transition-all duration-300 p-4 sm:p-6 animate-fade-in px-[35px]">
               <CardContent className="p-0 space-y-4 sm:space-y-6">
                 <div className="flex justify-center">
                   <h1 className="font-bold text-3xl sm:text-4xl text-blue-500">ZuckAds</h1>
