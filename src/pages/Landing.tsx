@@ -49,7 +49,7 @@ const Landing = () => {
             </div>
             
             <div className="flex space-x-4">
-              <Button size="lg" onClick={() => window.open('https://pay.perfectpay.com.br', '_blank')} className="bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white font-bold">
+              <Button size="lg" onClick={() => window.open('https://pay.perfectpay.com.br', '_blank')} className="bg-transparent border border-white text-white font-bold w-auto">
                 Adquirir Agora
               </Button>
             </div>
