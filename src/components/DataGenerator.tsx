@@ -2,12 +2,16 @@
 import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Copy, Users, RefreshCw } from 'lucide-react';
+import { Input } from '@/components/ui/input';
+import { Copy, Users, RefreshCw, Search, MapPin } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
 const DataGenerator = () => {
   const [generatedData, setGeneratedData] = useState<any>(null);
   const [isGenerating, setIsGenerating] = useState(false);
+  const [cep, setCep] = useState('');
+  const [isSearchingCep, setIsSearchingCep] = useState(false);
+  const [addressData, setAddressData] = useState<any>(null);
   const { toast } = useToast();
 
   const generateCPF = () => {
@@ -32,6 +36,50 @@ const DataGenerator = () => {
     return cpf.join('').replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
   };
 
+  const searchCep = async () => {
+    const cleanCep = cep.replace(/\D/g, '');
+    
+    if (cleanCep.length !== 8) {
+      toast({
+        title: "CEP inválido!",
+        description: "Digite um CEP com 8 dígitos",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsSearchingCep(true);
+
+    try {
+      const response = await fetch(`https://viacep.com.br/ws/${cleanCep}/json/`);
+      const data = await response.json();
+
+      if (data.erro) {
+        toast({
+          title: "CEP não encontrado!",
+          description: "Verifique o CEP digitado e tente novamente",
+          variant: "destructive",
+        });
+        setAddressData(null);
+      } else {
+        setAddressData(data);
+        toast({
+          title: "CEP encontrado!",
+          description: "Endereço carregado com sucesso",
+        });
+      }
+    } catch (error) {
+      toast({
+        title: "Erro na consulta!",
+        description: "Não foi possível consultar o CEP",
+        variant: "destructive",
+      });
+      setAddressData(null);
+    } finally {
+      setIsSearchingCep(false);
+    }
+  };
+
   const generateData = async () => {
     setIsGenerating(true);
     
@@ -40,9 +88,6 @@ const DataGenerator = () => {
     
     const firstNames = ['Ana', 'Carlos', 'Maria', 'João', 'Fernanda', 'Ricardo', 'Julia', 'Pedro', 'Beatriz', 'Lucas'];
     const lastNames = ['Silva', 'Santos', 'Oliveira', 'Souza', 'Lima', 'Pereira', 'Costa', 'Ferreira', 'Rodrigues', 'Almeida'];
-    const streets = ['Rua das Flores', 'Avenida Brasil', 'Rua da Paz', 'Avenida Central', 'Rua do Comércio'];
-    const cities = ['São Paulo', 'Rio de Janeiro', 'Belo Horizonte', 'Salvador', 'Brasília', 'Fortaleza', 'Curitiba', 'Recife'];
-    const states = ['SP', 'RJ', 'MG', 'BA', 'DF', 'CE', 'PR', 'PE'];
     
     const firstName = firstNames[Math.floor(Math.random() * firstNames.length)];
     const lastName = lastNames[Math.floor(Math.random() * lastNames.length)];
@@ -51,19 +96,37 @@ const DataGenerator = () => {
     const birthMonth = 1 + Math.floor(Math.random() * 12);
     const birthDay = 1 + Math.floor(Math.random() * 28);
     
+    // Se temos dados de endereço real do CEP, usa eles, senão gera aleatório
+    let endereco;
+    if (addressData) {
+      endereco = {
+        rua: addressData.logradouro || 'Rua não informada',
+        bairro: addressData.bairro || 'Bairro não informado',
+        cidade: addressData.localidade,
+        estado: addressData.uf,
+        cep: addressData.cep
+      };
+    } else {
+      const streets = ['Rua das Flores', 'Avenida Brasil', 'Rua da Paz', 'Avenida Central', 'Rua do Comércio'];
+      const cities = ['São Paulo', 'Rio de Janeiro', 'Belo Horizonte', 'Salvador', 'Brasília', 'Fortaleza', 'Curitiba', 'Recife'];
+      const states = ['SP', 'RJ', 'MG', 'BA', 'DF', 'CE', 'PR', 'PE'];
+      
+      endereco = {
+        rua: `${streets[Math.floor(Math.random() * streets.length)]}, ${100 + Math.floor(Math.random() * 999)}`,
+        bairro: `${['Centro', 'Vila Nova', 'Jardim América', 'Copacabana', 'Boa Vista'][Math.floor(Math.random() * 5)]}`,
+        cidade: cities[Math.floor(Math.random() * cities.length)],
+        estado: states[Math.floor(Math.random() * states.length)],
+        cep: `${Math.floor(Math.random() * 99999).toString().padStart(5, '0')}-${Math.floor(Math.random() * 999).toString().padStart(3, '0')}`
+      };
+    }
+    
     const data = {
       nome: `${firstName} ${lastName}`,
       cpf: generateCPF(),
       rg: `${Math.floor(Math.random() * 99999999)}-${Math.floor(Math.random() * 10)}`,
       genero: gender,
       nascimento: `${birthDay.toString().padStart(2, '0')}/${birthMonth.toString().padStart(2, '0')}/${birthYear}`,
-      endereco: {
-        rua: `${streets[Math.floor(Math.random() * streets.length)]}, ${100 + Math.floor(Math.random() * 999)}`,
-        bairro: `${['Centro', 'Vila Nova', 'Jardim América', 'Copacabana', 'Boa Vista'][Math.floor(Math.random() * 5)]}`,
-        cidade: cities[Math.floor(Math.random() * cities.length)],
-        estado: states[Math.floor(Math.random() * states.length)],
-        cep: `${Math.floor(Math.random() * 99999).toString().padStart(5, '0')}-${Math.floor(Math.random() * 999).toString().padStart(3, '0')}`
-      },
+      endereco,
       telefone: `(${10 + Math.floor(Math.random() * 90)}) 9${Math.floor(Math.random() * 9999).toString().padStart(4, '0')}-${Math.floor(Math.random() * 9999).toString().padStart(4, '0')}`,
       email: `${firstName.toLowerCase()}.${lastName.toLowerCase()}${Math.floor(Math.random() * 99)}@gmail.com`
     };
@@ -113,21 +176,66 @@ Email: ${generatedData.email}`;
         <Button 
           onClick={generateData}
           disabled={isGenerating}
-          className="bg-gradient-to-r from-cyan-500 to-green-500 hover:from-cyan-600 hover:to-green-600 text-black font-bold"
+          className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold"
         >
           {isGenerating ? (
             <div className="flex items-center space-x-2">
-              <div className="w-4 h-4 border-2 border-black border-t-transparent rounded-full animate-spin"></div>
+              <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
               <span>Gerando...</span>
             </div>
           ) : (
             <>
-              <RefreshCw className="w-4 h-4 mr-2" />
+              <RefreshCw className="w-4 h-4 mr-2 text-white" />
               Gerar Dados
             </>
           )}
         </Button>
       </div>
+
+      {/* Seção de busca de CEP */}
+      <Card className="bg-gray-800/50 border-gray-700">
+        <CardHeader>
+          <CardTitle className="text-white flex items-center space-x-2">
+            <MapPin className="w-5 h-5" />
+            <span>Buscar Endereço Real por CEP</span>
+          </CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div className="flex space-x-2">
+            <Input
+              value={cep}
+              onChange={(e) => setCep(e.target.value)}
+              placeholder="Digite o CEP (ex: 01310-100)"
+              className="bg-gray-700/50 border-gray-600 text-white placeholder-gray-400"
+              maxLength={9}
+            />
+            <Button
+              onClick={searchCep}
+              disabled={isSearchingCep}
+              className="bg-green-500 hover:bg-green-600 text-white font-bold"
+            >
+              {isSearchingCep ? (
+                <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+              ) : (
+                <Search className="w-4 h-4 text-white" />
+              )}
+            </Button>
+          </div>
+          
+          {addressData && (
+            <div className="p-4 bg-green-900/20 border border-green-500/30 rounded-lg">
+              <h4 className="text-green-400 font-semibold mb-2">Endereço Encontrado:</h4>
+              <div className="grid grid-cols-2 gap-2 text-sm">
+                <p className="text-gray-300"><strong>CEP:</strong> {addressData.cep}</p>
+                <p className="text-gray-300"><strong>UF:</strong> {addressData.uf}</p>
+                <p className="text-gray-300"><strong>Cidade:</strong> {addressData.localidade}</p>
+                <p className="text-gray-300"><strong>Bairro:</strong> {addressData.bairro}</p>
+                <p className="text-gray-300 col-span-2"><strong>Logradouro:</strong> {addressData.logradouro}</p>
+              </div>
+            </div>
+          )}
+        </CardContent>
+      </Card>
 
       {generatedData && (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -158,7 +266,7 @@ Email: ${generatedData.email}`;
                     size="sm"
                     variant="outline"
                     onClick={() => copyField(item.value, item.label)}
-                    className="border-gray-600 text-gray-400 hover:bg-cyan-500 hover:border-cyan-500 hover:text-black"
+                    className="border-gray-600 text-gray-400 hover:bg-green-500 hover:border-green-500 hover:text-white"
                   >
                     <Copy className="w-3 h-3" />
                   </Button>
@@ -189,7 +297,7 @@ Email: ${generatedData.email}`;
                     size="sm"
                     variant="outline"
                     onClick={() => copyField(item.value, item.label)}
-                    className="border-gray-600 text-gray-400 hover:bg-cyan-500 hover:border-cyan-500 hover:text-black"
+                    className="border-gray-600 text-gray-400 hover:bg-green-500 hover:border-green-500 hover:text-white"
                   >
                     <Copy className="w-3 h-3" />
                   </Button>
@@ -198,9 +306,9 @@ Email: ${generatedData.email}`;
               
               <Button 
                 onClick={copyAll}
-                className="w-full mt-4 bg-green-500 hover:bg-green-600 text-black font-bold"
+                className="w-full mt-4 bg-green-500 hover:bg-green-600 text-white font-bold"
               >
-                <Copy className="w-4 h-4 mr-2" />
+                <Copy className="w-4 h-4 mr-2 text-white" />
                 Copiar Todos os Dados
               </Button>
             </CardContent>
