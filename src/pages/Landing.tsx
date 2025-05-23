@@ -71,14 +71,14 @@ const Landing = () => {
         {/* Content */}
         <div className="container mx-auto text-center relative z-10 flex flex-col justify-center h-full pt-32">
           <div className="flex justify-center flex-col items-center mb-8">
-            <h1 className="text-6xl md:text-8xl font-bold mb-4 font-gt-super" style={{
+            <h1 style={{
             color: '#1BB98B'
-          }}>
+          }} className="font-bold font-mono -mb-2">
               Todas soluções
             </h1>
-            <h2 className="text-4xl md:text-6xl font-bold font-gt-super" style={{
+            <h2 style={{
             color: '#1BB98B'
-          }}>
+          }} className="text-4xl font-mono font-bold md:text-6xl">
               em uma só plataforma
             </h2>
           </div>
