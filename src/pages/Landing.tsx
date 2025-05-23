@@ -1,11 +1,12 @@
-
 import React, { useState, useEffect, useCallback } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Shield, Eye, Users, CreditCard, FileText, Image, BarChart, Zap, BookOpen, Lock } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+
 const Landing = () => {
   const navigate = useNavigate();
+  
   const zuckSafeFeatures = [{
     icon: <Image className="w-8 h-8" />,
     title: "Otimização de Criativos",
@@ -40,7 +41,9 @@ const Landing = () => {
     title: "Dados Estratégicos",
     description: "Perfis com parâmetros ideais para performance e estruturação"
   }];
-  return <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
+  
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
       {/* Header - 100% Transparente e sobreposto */}
       <header className="absolute top-0 left-0 w-full z-50 bg-transparent">
         <div className="container mx-auto px-4 py-2">
@@ -91,6 +94,21 @@ const Landing = () => {
           }} className="bg-transparent border-2 border-white text-white font-bold w-auto transition duration-300 ease-in-out hover:bg-white/10">
               Conheça Nossos Produtos
             </Button>
+          </div>
+        </div>
+      </section>
+      
+      {/* Word Carousel Section */}
+      <section className="py-16 px-4 overflow-hidden">
+        <div className="container mx-auto">
+          <div className="relative">
+            <div className="animate-scroll whitespace-nowrap">
+              <span className="inline-block font-mono text-xl text-gray-300">
+                conta quente • proxy blindado • perfil limpo • geração de dados • risco zero • geração de cartões • 
+                conta quente • proxy blindado • perfil limpo • geração de dados • risco zero • geração de cartões • 
+                conta quente • proxy blindado • perfil limpo • geração de dados • risco zero • geração de cartões
+              </span>
+            </div>
           </div>
         </div>
       </section>
@@ -241,6 +259,8 @@ const Landing = () => {
           </div>
         </div>
       </footer>
-    </div>;
+    </div>
+  );
 };
+
 export default Landing;
