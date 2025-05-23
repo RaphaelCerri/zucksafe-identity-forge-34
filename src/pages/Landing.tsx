@@ -1,45 +1,50 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Shield, Eye, Users, CreditCard, FileText, Image, BarChart, Zap } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+
 const Landing = () => {
   const navigate = useNavigate();
-  const zuckSafeFeatures = [{
-    icon: <Image className="w-8 h-8" />,
-    title: "Refinador de Criativos",
-    description: "Remove metadados e altera hash das imagens para evitar detecção"
-  }, {
-    icon: <FileText className="w-8 h-8" />,
-    title: "Refinador de Texto",
-    description: "Modifica textos com caracteres unicode invisíveis"
-  }, {
-    icon: <Users className="w-8 h-8" />,
-    title: "Dados Brasileiros",
-    description: "Gera CPF, endereços, nomes e dados completos válidos"
-  }, {
-    icon: <CreditCard className="w-8 h-8" />,
-    title: "Cartões de Teste",
-    description: "Números de cartão válidos para testes de anúncios"
-  }, {
-    icon: <Shield className="w-8 h-8" />,
-    title: "Contas Falsas",
-    description: "Emails e perfis para Gmail, Facebook e Instagram"
-  }, {
-    icon: <Eye className="w-8 h-8" />,
-    title: "Cloaker Safe",
-    description: "Códigos de redirecionamento prontos para usar"
-  }];
-  const zuckSafeAdsFeatures = [{
-    icon: <Users className="w-8 h-8" />,
-    title: "Contas Ads Aquecidas",
-    description: "Contas simuladas com alto limite de Business Managers"
-  }, {
-    icon: <BarChart className="w-8 h-8" />,
-    title: "Dados Estratégicos",
-    description: "Perfis otimizados para performance em campanhas"
-  }];
+  const zuckSafeFeatures = [
+    {
+      icon: <Image className="w-8 h-8" />,
+      title: "Refinador de Criativos",
+      description: "Remove metadados e altera hash das imagens para evitar detecção"
+    }, {
+      icon: <FileText className="w-8 h-8" />,
+      title: "Refinador de Texto",
+      description: "Modifica textos com caracteres unicode invisíveis"
+    }, {
+      icon: <Users className="w-8 h-8" />,
+      title: "Dados Brasileiros",
+      description: "Gera CPF, endereços, nomes e dados completos válidos"
+    }, {
+      icon: <CreditCard className="w-8 h-8" />,
+      title: "Cartões de Teste",
+      description: "Números de cartão válidos para testes de anúncios"
+    }, {
+      icon: <Shield className="w-8 h-8" />,
+      title: "Contas Falsas",
+      description: "Emails e perfis para Gmail, Facebook e Instagram"
+    }, {
+      icon: <Eye className="w-8 h-8" />,
+      title: "Cloaker Safe",
+      description: "Códigos de redirecionamento prontos para usar"
+    }
+  ];
+  const zuckSafeAdsFeatures = [
+    {
+      icon: <Users className="w-8 h-8" />,
+      title: "Contas Ads Aquecidas",
+      description: "Contas simuladas com alto limite de Business Managers"
+    }, {
+      icon: <BarChart className="w-8 h-8" />,
+      title: "Dados Estratégicos",
+      description: "Perfis otimizados para performance em campanhas"
+    }
+  ];
+  
   return <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
       {/* Header */}
       <header className="border-b border-gray-800 bg-black/50 backdrop-blur-sm">
@@ -59,15 +64,47 @@ const Landing = () => {
         </div>
       </header>
 
-      {/* Hero Section */}
-      <section className="py-20 px-4">
-        <div className="container mx-auto text-center">
+      {/* Hero Section with Blue Graphics Background */}
+      <section 
+        className="relative py-32 px-4 bg-cover bg-center overflow-hidden"
+        style={{ 
+          backgroundImage: "url('https://images.unsplash.com/photo-1551038247-3d9af20df552?auto=format&fit=crop&q=80')",
+          backgroundSize: "cover",
+          backgroundPosition: "center"
+        }}
+      >
+        {/* Overlay with gradient */}
+        <div className="absolute inset-0 bg-gradient-to-r from-gray-900/90 via-gray-900/80 to-gray-900/70 backdrop-filter backdrop-blur-sm"></div>
+        
+        {/* Content */}
+        <div className="container mx-auto text-center relative z-10">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-cyan-400 via-green-400 to-cyan-400 bg-clip-text text-transparent animate-fade-in">
             ZuckSafe
           </h1>
-          <p className="text-xl md:text-2xl text-gray-300 mb-4 max-w-4xl mx-auto animate-fade-in">
+          <p className="text-xl md:text-2xl text-gray-200 mb-8 max-w-4xl mx-auto animate-fade-in leading-relaxed">
             Escolha sua plataforma: gere dados fake com precisão ou crie contas simuladas aquecidas com potencial de alto desempenho em campanhas.
           </p>
+          
+          {/* Optional - Add a CTA button here if needed */}
+          <Button 
+            size="lg" 
+            className="animate-fade-in bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white font-bold"
+            onClick={() => {
+              const sectionToScrollTo = document.getElementById('products-section');
+              if (sectionToScrollTo) {
+                sectionToScrollTo.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
+          >
+            Conheça Nossos Produtos
+          </Button>
+        </div>
+      </section>
+      
+      {/* Products Section */}
+      <section className="py-20 px-4" id="products-section">
+        <div className="container mx-auto text-center">
+          <h2 className="text-3xl font-bold text-white mb-12">Nossas Soluções</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12 mb-16 max-w-6xl mx-auto">
             {/* ZuckSafe Card */}
