@@ -3,43 +3,57 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Shield, Eye, Users, CreditCard, FileText, Image, BarChart, Zap, BookOpen, Lock } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+
 const Landing = () => {
   const navigate = useNavigate();
-  const zuckSafeFeatures = [{
-    icon: <Image className="w-8 h-8" />,
-    title: "Otimização de Criativos",
-    description: "Remove metadados e ajusta parâmetros visuais de imagens para uso em validação de campanhas"
-  }, {
-    icon: <FileText className="w-8 h-8" />,
-    title: "Refinador de Texto",
-    description: "Ajusta estruturas textuais com modificação discreta para adequação em múltiplos contextos"
-  }, {
-    icon: <Users className="w-8 h-8" />,
-    title: "Geração de Perfis Brasileiros",
-    description: "Nome, CPF, endereço, telefone e dados complementares"
-  }, {
-    icon: <CreditCard className="w-8 h-8" />,
-    title: "Cartões ZuckFace",
-    description: "Geração de números formatados e estruturados para uso em validações e fluxos simulados"
-  }, {
-    icon: <Shield className="w-8 h-8" />,
-    title: "Contas Auxiliares",
-    description: "Perfis para Gmail, Facebook, Instagram e outras plataformas, prontos para uso"
-  }, {
-    icon: <Eye className="w-8 h-8" />,
-    title: "Cloaker Zuck",
-    description: "Códigos inteligentes para redirecionamento com ajuste de rotas e dispositivos"
-  }];
-  const zuckSafeAdsFeatures = [{
-    icon: <Users className="w-8 h-8" />,
-    title: "Perfis Ads Otimizados",
-    description: "Criação de contas com estrutura configurada para campanhas em ambientes de análise (Google, Facebook, TikTok)"
-  }, {
-    icon: <BarChart className="w-8 h-8" />,
-    title: "Dados Estratégicos",
-    description: "Perfis com parâmetros ideais para performance e estruturação"
-  }];
-  return <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
+  const zuckSafeFeatures = [
+    {
+      icon: <Image className="w-8 h-8" />,
+      title: "Otimização de Criativos",
+      description: "Remove metadados e ajusta parâmetros visuais de imagens para uso em validação de campanhas"
+    },
+    {
+      icon: <FileText className="w-8 h-8" />,
+      title: "Refinador de Texto",
+      description: "Ajusta estruturas textuais com modificação discreta para adequação em múltiplos contextos"
+    },
+    {
+      icon: <Users className="w-8 h-8" />,
+      title: "Geração de Perfis Brasileiros",
+      description: "Nome, CPF, endereço, telefone e dados complementares"
+    },
+    {
+      icon: <CreditCard className="w-8 h-8" />,
+      title: "Cartões ZuckFace",
+      description: "Geração de números formatados e estruturados para uso em validações e fluxos simulados"
+    },
+    {
+      icon: <Shield className="w-8 h-8" />,
+      title: "Contas Auxiliares",
+      description: "Perfis para Gmail, Facebook, Instagram e outras plataformas, prontos para uso"
+    },
+    {
+      icon: <Eye className="w-8 h-8" />,
+      title: "Cloaker Zuck",
+      description: "Códigos inteligentes para redirecionamento com ajuste de rotas e dispositivos"
+    }
+  ];
+
+  const zuckSafeAdsFeatures = [
+    {
+      icon: <Users className="w-8 h-8" />,
+      title: "Perfis Ads Otimizados",
+      description: "Criação de contas com estrutura configurada para campanhas em ambientes de análise (Google, Facebook, TikTok)"
+    },
+    {
+      icon: <BarChart className="w-8 h-8" />,
+      title: "Dados Estratégicos",
+      description: "Perfis com parâmetros ideais para performance e estruturação"
+    }
+  ];
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
       {/* Header - 100% Transparente e sobreposto */}
       <header className="absolute top-0 left-0 w-full z-50 bg-transparent">
         <div className="container mx-auto px-4 py-2">
@@ -61,33 +75,42 @@ const Landing = () => {
       <section className="relative w-full h-screen top-0 overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
-          <img src="/lovable-uploads/ecf4153f-8771-41f5-be83-039d3fa203a8.png" alt="Background" className="absolute inset-0 w-full h-full object-cover" />
+          <img 
+            src="/lovable-uploads/ecf4153f-8771-41f5-be83-039d3fa203a8.png" 
+            alt="Background" 
+            className="absolute inset-0 w-full h-full object-cover" 
+          />
           {/* Gradient overlay from bottom to middle */}
-          <div className="absolute inset-0" style={{
-          background: `linear-gradient(to top, #06090f 0%, #06090f 25%, transparent 50%)`
-        }}></div>
+          <div 
+            className="absolute inset-0" 
+            style={{
+              background: `linear-gradient(to top, #06090f 0%, #06090f 25%, transparent 50%)`
+            }}
+          ></div>
         </div>
         
         {/* Content */}
         <div className="container mx-auto text-center relative z-10 flex flex-col justify-center h-full pt-32">
           <div className="flex justify-center flex-col items-center mb-8">
-            <h1 className="font-bold font-mono -mb-2 text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">Todas soluções</h1>
-            <h2 className="font-mono font-bold text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">em uma só plataforma</h2>
+            <h1 className="font-bold font-mono -mb-2 text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">Todas soluções</h1>
+            <h2 className="font-mono font-bold text-white text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl">em uma só plataforma</h2>
           </div>
-          <p className="text-lg sm:text-xl md:text-2xl text-gray-200 mb-12 max-w-4xl mx-auto animate-fade-in leading-relaxed px-4">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-200 mb-12 max-w-4xl mx-auto animate-fade-in leading-relaxed px-4">
             Escolha sua plataforma: simule dados com precisão ou crie perfis otimizados para ambientes de validação de campanhas.
           </p>
           
           {/* CTA Button */}
-          <div className="flex justify-center mb-16 sm:mb-20 md:mb-8">
-            <Button size="lg" onClick={() => {
-            const sectionToScrollTo = document.getElementById('products-section');
-            if (sectionToScrollTo) {
-              sectionToScrollTo.scrollIntoView({
-                behavior: 'smooth'
-              });
-            }
-          }} className="bg-transparent border-2 border-white text-white font-bold w-auto transition duration-300 ease-in-out hover:bg-white/10 text-sm sm:text-base md:text-lg px-6 py-3 sm:px-8 sm:py-4">
+          <div className="flex justify-center mb-16 sm:mb-20 md:mb-32">
+            <Button 
+              size="lg" 
+              onClick={() => {
+                const sectionToScrollTo = document.getElementById('products-section');
+                if (sectionToScrollTo) {
+                  sectionToScrollTo.scrollIntoView({ behavior: 'smooth' });
+                }
+              }} 
+              className="bg-transparent border-2 border-white text-white font-bold w-auto transition duration-300 ease-in-out hover:bg-white/10 text-xs sm:text-sm md:text-base px-4 py-2 sm:px-6 sm:py-3 md:px-8 md:py-3"
+            >
               Conheça Nossos Produtos
             </Button>
           </div>
@@ -177,7 +200,11 @@ const Landing = () => {
                     <span className="text-gray-300 text-sm sm:text-base">Economia de 25%</span>
                   </div>
                 </div>
-                <Button size="lg" onClick={() => window.open('https://pay.perfectpay.com.br', '_blank')} className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-bold py-6 sm:py-8 sm:text-lg text-xs">
+                <Button 
+                  size="lg" 
+                  onClick={() => window.open('https://pay.perfectpay.com.br', '_blank')} 
+                  className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-bold py-6 sm:py-8 text-xs sm:text-base"
+                >
                   ADQUIRA O COMBO COMPLETO AGORA
                 </Button>
                 <p className="text-base sm:text-lg font-semibold bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-gray-300">
@@ -197,7 +224,8 @@ const Landing = () => {
                 <h1 className="font-bold text-green-500 text-3xl sm:text-4xl">ZuckSafe</h1>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-                {zuckSafeFeatures.map((feature, index) => <Card key={index} className="bg-gray-800/50 border-gray-700 hover:border-green-400 transition-all duration-300 hover:scale-105 animate-fade-in">
+                {zuckSafeFeatures.map((feature, index) => (
+                  <Card key={index} className="bg-gray-800/50 border-gray-700 hover:border-green-400 transition-all duration-300 hover:scale-105 animate-fade-in">
                     <CardContent className="p-4 sm:p-6 text-center">
                       <div className="text-green-400 mb-4 flex justify-center">
                         {feature.icon}
@@ -205,7 +233,8 @@ const Landing = () => {
                       <h3 className="text-lg sm:text-xl font-bold text-white mb-2">{feature.title}</h3>
                       <p className="text-gray-400 text-sm sm:text-base">{feature.description}</p>
                     </CardContent>
-                  </Card>)}
+                  </Card>
+                ))}
               </div>
             </div>
             
@@ -215,7 +244,8 @@ const Landing = () => {
                 <h1 className="font-bold text-3xl sm:text-4xl text-blue-400">ZuckAds</h1>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-                {zuckSafeAdsFeatures.map((feature, index) => <Card key={index} className="bg-gray-800/50 border-gray-700 hover:border-blue-400 transition-all duration-300 hover:scale-105 animate-fade-in">
+                {zuckSafeAdsFeatures.map((feature, index) => (
+                  <Card key={index} className="bg-gray-800/50 border-gray-700 hover:border-blue-400 transition-all duration-300 hover:scale-105 animate-fade-in">
                     <CardContent className="p-4 sm:p-6 text-center">
                       <div className="text-blue-400 mb-4 flex justify-center">
                         {feature.icon}
@@ -223,7 +253,8 @@ const Landing = () => {
                       <h3 className="text-lg sm:text-xl font-bold text-white mb-2">{feature.title}</h3>
                       <p className="text-gray-400 text-sm sm:text-base">{feature.description}</p>
                     </CardContent>
-                  </Card>)}
+                  </Card>
+                ))}
               </div>
             </div>
           </div>
@@ -255,6 +286,8 @@ const Landing = () => {
           </div>
         </div>
       </footer>
-    </div>;
+    </div>
+  );
 };
+
 export default Landing;
