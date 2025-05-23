@@ -73,7 +73,7 @@ const Landing = () => {
           <div className="flex justify-center flex-col items-center mb-8">
             <h1 style={{
             color: '#1BB98B'
-          }} className="font-bold font-mono -mb-2 text-slate-50 text-8xl">Todas soluções</h1>
+          }} className="font-bold font-mono -mb-2 text-8xl text-slate-50">Todas soluções</h1>
             <h2 style={{
             color: '#1BB98B'
           }} className="font-mono font-bold text-7xl text-slate-50">em uma só plataforma</h2>
