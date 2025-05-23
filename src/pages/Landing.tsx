@@ -141,7 +141,7 @@ const Landing = () => {
           
           {/* Combo Zuck Card - Full Width */}
           <div className="max-w-6xl mx-auto mb-16">
-            <Card className="bg-gray-800/50 border-2 border-orange-500 hover:border-red-500 transition-all duration-300 p-6 animate-fade-in shadow-xl shadow-red-500/10 py-[48px]">
+            <Card className="bg-gray-800/50 border-2 border-gray-800 hover:border-red-500 transition-all duration-300 p-6 animate-fade-in shadow-xl shadow-red-500/10 py-[48px]">
               <CardContent className="p-0 space-y-6">
                 <div className="flex justify-center -mb-1 -mt-6 my-0">
                   <div className="flex items-center space-x-3">
