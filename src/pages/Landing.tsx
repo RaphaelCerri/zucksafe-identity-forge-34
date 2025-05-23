@@ -119,7 +119,7 @@ const Landing = () => {
                 <div className="flex justify-center">
                   <h1 style={{
                   color: '#3b7fe4'
-                }} className="font-bold text-4xl text-blue-700">ZuckAds</h1>
+                }} className="font-bold text-4xl text-blue-500">ZuckAds</h1>
                 </div>
                 
                 <p className="text-gray-300 text-sm">Ambiente especializado para criação automatizada de perfis com estrutura otimizada para validação de campanhas em plataformas de anúncios.</p>
