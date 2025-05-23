@@ -95,11 +95,11 @@ const Landing = () => {
       </section>
       
       {/* Word Carousel Section */}
-      <section className="py-16 px-4 overflow-hidden">
+      <section className="px-4 overflow-hidden bg-teal-600 py-[22px]">
         <div className="container mx-auto">
           <div className="relative">
             <div className="animate-scroll whitespace-nowrap">
-              <span className="inline-block font-mono text-xl text-gray-300">
+              <span className="inline-block font-mono text-gray-300 text-2xl">
                 conta quente • proxy blindado • perfil limpo • geração de dados • risco zero • geração de cartões • 
                 conta quente • proxy blindado • perfil limpo • geração de dados • risco zero • geração de cartões • 
                 conta quente • proxy blindado • perfil limpo • geração de dados • risco zero • geração de cartões
