@@ -108,7 +108,7 @@ const Landing = () => {
         {/* Content */}
         <div className="container mx-auto text-center relative z-10">
           <div className="flex justify-center mb-6">
-            <img src="/lovable-uploads/c2e803d1-757b-4fdd-972b-bef45d34a3ab.png" alt="ZuckSafe Logo" className="h-16 w-auto\n" />
+            <img src="/lovable-uploads/c2e803d1-757b-4fdd-972b-bef45d34a3ab.png" alt="ZuckSafe Logo" className="h-[500px] w-auto" />
           </div>
           <p className="text-xl md:text-2xl text-gray-200 mb-8 max-w-4xl mx-auto animate-fade-in leading-relaxed">
             Escolha sua plataforma: simule dados com precisão ou crie perfis otimizados para ambientes de validação de campanhas.
@@ -138,9 +138,9 @@ const Landing = () => {
             <Card className="bg-gray-800/50 border-gray-700 hover:border-cyan-400 transition-all duration-300 p-6 animate-fade-in">
               <CardContent className="p-0 space-y-6">
                 <div className="flex justify-center">
-                  <img src="/lovable-uploads/c2e803d1-757b-4fdd-972b-bef45d34a3ab.png" alt="ZuckSafe Logo" className="h-12 w-auto" />
+                  <img src="/lovable-uploads/c2e803d1-757b-4fdd-972b-bef45d34a3ab.png" alt="ZuckSafe Logo" className="h-[150px] w-auto" />
                 </div>
-                <h2 className="text-2xl font-bold text-white">ZuckSafe</h2>
+                
                 <p className="text-gray-300">Plataforma completa para geração de dados, cartões para validação, contas auxiliares, e otimização de elementos visuais e textuais.</p>
                 <Button size="lg" className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-black font-bold py-6" onClick={() => window.open('https://pay.perfectpay.com.br', '_blank')}>ADIQUIRIR SEU ACESSO AGORA</Button>
                 <p className="text-sm text-gray-500">Acesso vitalício por R$97,90</p>
@@ -151,9 +151,9 @@ const Landing = () => {
             <Card className="bg-gray-800/50 border-gray-700 hover:border-green-400 transition-all duration-300 p-6 animate-fade-in">
               <CardContent className="p-0 space-y-6">
                 <div className="flex justify-center">
-                  <img src="/lovable-uploads/8c3894ed-1b41-4b5d-ae03-3d94ab889c03.png" alt="ZuckSafeAds Logo" className="h-12 w-auto" />
+                  <img src="/lovable-uploads/8c3894ed-1b41-4b5d-ae03-3d94ab889c03.png" alt="ZuckSafeAds Logo" className="h-[150px] w-auto" />
                 </div>
-                <h2 className="text-2xl font-bold text-white">ZuckSafeAds</h2>
+                
                 <p className="text-gray-300">Ambiente especializado para criação automatizada de perfis com estrutura otimizada para validação de campanhas em plataformas de anúncios.</p>
                 <Button size="lg" className="w-full bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-black font-bold py-6" onClick={() => window.open('https://pay.perfectpay.com.br', '_blank')}>CRIAR PERFIS OTIMIZADOS AGORA</Button>
                 <p className="text-sm text-gray-500">Acesso vitalício por R$97,90</p>
@@ -167,9 +167,9 @@ const Landing = () => {
               <CardContent className="p-0 space-y-6">
                 <div className="flex justify-center">
                   <div className="flex items-center space-x-3">
-                    <img src="/lovable-uploads/c2e803d1-757b-4fdd-972b-bef45d34a3ab.png" alt="ZuckSafe Logo" className="h-10 w-auto" />
+                    <img src="/lovable-uploads/c2e803d1-757b-4fdd-972b-bef45d34a3ab.png" alt="ZuckSafe Logo" className="h-[150px] w-auto" />
                     <span className="text-3xl font-bold text-white">+</span>
-                    <img src="/lovable-uploads/8c3894ed-1b41-4b5d-ae03-3d94ab889c03.png" alt="ZuckSafeAds Logo" className="h-10 w-auto" />
+                    <img src="/lovable-uploads/8c3894ed-1b41-4b5d-ae03-3d94ab889c03.png" alt="ZuckSafeAds Logo" className="h-[150px] w-auto" />
                   </div>
                 </div>
                 <h2 className="text-3xl font-bold text-transparent bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 bg-clip-text">Combo Zuck</h2>
@@ -209,7 +209,7 @@ const Landing = () => {
             {/* ZuckSafe Features */}
             <div className="mb-20">
               <div className="flex justify-center items-center mb-8">
-                <img src="/lovable-uploads/c2e803d1-757b-4fdd-972b-bef45d34a3ab.png" alt="ZuckSafe Logo" className="h-10 w-auto" />
+                <img src="/lovable-uploads/c2e803d1-757b-4fdd-972b-bef45d34a3ab.png" alt="ZuckSafe Logo" className="h-[150px] w-auto" />
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
                 {zuckSafeFeatures.map((feature, index) => <Card key={index} className="bg-gray-800/50 border-gray-700 hover:border-cyan-400 transition-all duration-300 hover:scale-105 animate-fade-in">
@@ -227,7 +227,7 @@ const Landing = () => {
             {/* ZuckSafeAds Features */}
             <div>
               <div className="flex justify-center items-center mb-8">
-                <img src="/lovable-uploads/8c3894ed-1b41-4b5d-ae03-3d94ab889c03.png" alt="ZuckSafeAds Logo" className="h-10 w-auto" />
+                <img src="/lovable-uploads/8c3894ed-1b41-4b5d-ae03-3d94ab889c03.png" alt="ZuckSafeAds Logo" className="h-[150px] w-auto" />
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
                 {zuckSafeAdsFeatures.map((feature, index) => <Card key={index} className="bg-gray-800/50 border-gray-700 hover:border-green-400 transition-all duration-300 hover:scale-105 animate-fade-in">
@@ -258,7 +258,7 @@ const Landing = () => {
       <footer className="border-t border-gray-800 bg-black py-8 px-4">
         <div className="container mx-auto text-center">
           <div className="flex items-center justify-center space-x-2 mb-4">
-            <img src="/lovable-uploads/c2e803d1-757b-4fdd-972b-bef45d34a3ab.png" alt="ZuckSafe Logo" className="h-6 w-auto" />
+            <img src="/lovable-uploads/c2e803d1-757b-4fdd-972b-bef45d34a3ab.png" alt="ZuckSafe Logo" className="h-[100px] w-auto" />
           </div>
           <p className="text-gray-400 text-sm mb-4">
             © 2024 ZuckSafe. Todos os direitos reservados.
