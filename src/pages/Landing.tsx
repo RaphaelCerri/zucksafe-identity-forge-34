@@ -1,19 +1,20 @@
-
 import React, { useState, useEffect, useCallback } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Shield, Eye, Users, CreditCard, FileText, Image, BarChart, Zap, BookOpen, Lock } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-
 const Landing = () => {
   const navigate = useNavigate();
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  
+  const [mousePosition, setMousePosition] = useState({
+    x: 0,
+    y: 0
+  });
+
   // Handle mouse movement for animation
   const handleMouseMove = useCallback((e: MouseEvent) => {
     setMousePosition({
-      x: (e.clientX / window.innerWidth) * 100,
-      y: (e.clientY / window.innerHeight) * 100,
+      x: e.clientX / window.innerWidth * 100,
+      y: e.clientY / window.innerHeight * 100
     });
   }, []);
 
@@ -24,7 +25,6 @@ const Landing = () => {
       window.removeEventListener('mousemove', handleMouseMove);
     };
   }, [handleMouseMove]);
-
   const zuckSafeFeatures = [{
     icon: <Image className="w-8 h-8" />,
     title: "Otimização de Criativos",
@@ -50,7 +50,6 @@ const Landing = () => {
     title: "Cloaker Zuck",
     description: "Códigos inteligentes para redirecionamento com ajuste de rotas e dispositivos"
   }];
-  
   const zuckSafeAdsFeatures = [{
     icon: <Users className="w-8 h-8" />,
     title: "Perfis Ads Otimizados",
@@ -60,7 +59,6 @@ const Landing = () => {
     title: "Dados Estratégicos",
     description: "Perfis com parâmetros ideais para performance e estruturação"
   }];
-  
   return <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
       {/* Header */}
       <header className="border-b border-gray-800 bg-black/50 backdrop-blur-sm">
@@ -84,26 +82,26 @@ const Landing = () => {
       <section className="relative py-32 px-4 overflow-hidden">
         {/* Dynamic dots background */}
         <div className="absolute inset-0 bg-gray-900">
-          <div className="dots-background" style={{ 
-            backgroundSize: "24px 24px",
-            backgroundImage: `radial-gradient(circle, rgba(59, 130, 246, 0.3) 2px, transparent 2px)`,
-            transform: `translate(${mousePosition.x * 0.02}px, ${mousePosition.y * 0.02}px)`,
-            transition: 'transform 0.1s ease-out'
-          }}>
+          <div className="dots-background" style={{
+          backgroundSize: "24px 24px",
+          backgroundImage: `radial-gradient(circle, rgba(59, 130, 246, 0.3) 2px, transparent 2px)`,
+          transform: `translate(${mousePosition.x * 0.02}px, ${mousePosition.y * 0.02}px)`,
+          transition: 'transform 0.1s ease-out'
+        }}>
           </div>
-          <div className="dots-background" style={{ 
-            backgroundSize: "32px 32px",
-            backgroundImage: `radial-gradient(circle, rgba(56, 189, 248, 0.2) 3px, transparent 3px)`,
-            transform: `translate(${mousePosition.x * 0.04}px, ${mousePosition.y * 0.04}px)`,
-            transition: 'transform 0.2s ease-out'
-          }}>
+          <div className="dots-background" style={{
+          backgroundSize: "32px 32px",
+          backgroundImage: `radial-gradient(circle, rgba(56, 189, 248, 0.2) 3px, transparent 3px)`,
+          transform: `translate(${mousePosition.x * 0.04}px, ${mousePosition.y * 0.04}px)`,
+          transition: 'transform 0.2s ease-out'
+        }}>
           </div>
-          <div className="dots-background" style={{ 
-            backgroundSize: "48px 48px",
-            backgroundImage: `radial-gradient(circle, rgba(14, 165, 233, 0.15) 4px, transparent 4px)`,
-            transform: `translate(${mousePosition.x * 0.05}px, ${mousePosition.y * 0.05}px)`,
-            transition: 'transform 0.3s ease-out'
-          }}>
+          <div className="dots-background" style={{
+          backgroundSize: "48px 48px",
+          backgroundImage: `radial-gradient(circle, rgba(14, 165, 233, 0.15) 4px, transparent 4px)`,
+          transform: `translate(${mousePosition.x * 0.05}px, ${mousePosition.y * 0.05}px)`,
+          transition: 'transform 0.3s ease-out'
+        }}>
           </div>
 
           {/* Gradient overlay on top of dots */}
@@ -251,7 +249,7 @@ const Landing = () => {
       {/* Legal Notice */}
       <section className="py-8 px-4 bg-black/30">
         <div className="container mx-auto">
-          <p className="text-xs text-gray-500 text-center max-w-4xl mx-auto">
+          <p className="text-xs text-center max-w-4xl mx-auto text-zinc-700">
             Plataforma voltada para testes, simulações e desenvolvimento. Nenhum dado deve ser utilizado em operações reais. Uso indevido é de responsabilidade do usuário.
           </p>
         </div>
@@ -276,5 +274,4 @@ const Landing = () => {
       </footer>
     </div>;
 };
-
 export default Landing;
