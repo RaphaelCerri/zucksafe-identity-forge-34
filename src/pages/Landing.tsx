@@ -41,7 +41,7 @@ const Landing = () => {
   }];
   return <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
       {/* Header */}
-      <header className="border-b border-gray-800 bg-black/50 backdrop-blur-sm">
+      <header className="border-b border-gray-800 bg-transparent backdrop-blur-sm">
         <div className="container mx-auto px-4 py-2">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
@@ -69,8 +69,13 @@ const Landing = () => {
         
         {/* Content */}
         <div className="container mx-auto text-center relative z-10">
-          <div className="flex justify-center ">
-            <img src="/lovable-uploads/c2e803d1-757b-4fdd-972b-bef45d34a3ab.png" alt="ZuckSafe Logo" className="h-[800px] w-auto" />
+          <div className="flex justify-center flex-col items-center mb-8">
+            <h1 className="text-6xl md:text-8xl font-bold mb-4" style={{ color: '#1BB98B' }}>
+              Todas soluções
+            </h1>
+            <h2 className="text-4xl md:text-6xl font-bold" style={{ color: '#1BB98B' }}>
+              em uma só plataforma
+            </h2>
           </div>
           <p className="text-xl md:text-2xl text-gray-200 mb-12 max-w-4xl mx-auto animate-fade-in leading-relaxed">
             Escolha sua plataforma: simule dados com precisão ou crie perfis otimizados para ambientes de validação de campanhas.
