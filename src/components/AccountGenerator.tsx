@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -10,6 +9,52 @@ const AccountGenerator = () => {
   const [isGenerating, setIsGenerating] = useState(false);
   const [platform, setPlatform] = useState('gmail');
   const { toast } = useToast();
+
+  const generatePassword = () => {
+    const foods = [
+      'pizza', 'hamburguer', 'lasanha', 'sushi', 'tacos', 'brigadeiro', 
+      'açai', 'coxinha', 'pastel', 'feijoada', 'pamonha', 'churros',
+      'macarrao', 'risotto', 'salada', 'sorvete', 'chocolate', 'bolo',
+      'pudim', 'mousse', 'torta', 'biscoito', 'pao', 'queijo'
+    ];
+
+    const dogNames = [
+      'rex', 'bob', 'thor', 'luna', 'max', 'bella', 'buddy', 'charlie',
+      'cooper', 'lucy', 'rocky', 'molly', 'jack', 'lily', 'duke',
+      'sophie', 'bear', 'zoe', 'tucker', 'chloe', 'toby', 'ruby',
+      'buster', 'penny', 'oscar', 'maggie', 'murphy', 'daisy'
+    ];
+
+    const specialChars = ['@', '#', '$', '%', '&', '*', '!', '?', '+', '=', '-', '_'];
+
+    const wordType = Math.random() > 0.5 ? 'food' : 'dog';
+    const baseWord = wordType === 'food' 
+      ? foods[Math.floor(Math.random() * foods.length)]
+      : dogNames[Math.floor(Math.random() * dogNames.length)];
+
+    // Capitaliza a primeira letra
+    const capitalizedWord = baseWord.charAt(0).toUpperCase() + baseWord.slice(1);
+    
+    // Adiciona números aleatórios (2-4 dígitos)
+    const numbers = Math.floor(Math.random() * 9000) + 1000;
+    
+    // Adiciona 1 ou 2 caracteres especiais
+    const specialCharCount = Math.random() > 0.5 ? 1 : 2;
+    let specialPart = '';
+    for (let i = 0; i < specialCharCount; i++) {
+      specialPart += specialChars[Math.floor(Math.random() * specialChars.length)];
+    }
+
+    // Combina tudo de forma aleatória
+    const combinations = [
+      `${capitalizedWord}${numbers}${specialPart}`,
+      `${capitalizedWord}${specialPart}${numbers}`,
+      `${specialPart}${capitalizedWord}${numbers}`,
+      `${numbers}${capitalizedWord}${specialPart}`
+    ];
+
+    return combinations[Math.floor(Math.random() * combinations.length)];
+  };
 
   const generateAccount = () => {
     const firstNames = ['ana', 'carlos', 'maria', 'joao', 'fernanda', 'ricardo', 'julia', 'pedro', 'beatriz', 'lucas'];
@@ -38,7 +83,7 @@ const AccountGenerator = () => {
         break;
     }
     
-    const password = `${firstName.charAt(0).toUpperCase()}${firstName.slice(1)}${number}#`;
+    const password = generatePassword();
     
     return {
       email,
