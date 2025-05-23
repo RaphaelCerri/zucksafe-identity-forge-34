@@ -177,7 +177,7 @@ const Landing = () => {
                     <span className="text-gray-300 text-sm sm:text-base">Economia de 25%</span>
                   </div>
                 </div>
-                <Button size="lg" onClick={() => window.open('https://pay.perfectpay.com.br', '_blank')} className="inline-flex items-center justify-center bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-bold py-4 px-4 text-xs sm:py-6 sm:px-8 sm:text-lg rounded shadow-lg transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-orange-500">ADQUIRA O COMBO AGORA</Button>
+                <Button size="lg" onClick={() => window.open('https://pay.perfectpay.com.br', '_blank')} className="inline-flex items-center justify-center bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-bold py-4 px-4 text-xs sm:py-10 sm:px-12 sm:text-3xl rounded shadow-lg transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-orange-500">ADQUIRA O COMBO AGORA</Button>
                 <p className="text-base sm:text-lg font-semibold bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-gray-300">
                   Acesso vitalício por apenas R$147,90
                 </p>
