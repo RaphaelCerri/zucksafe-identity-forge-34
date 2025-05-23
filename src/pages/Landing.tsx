@@ -154,11 +154,11 @@ const Landing = () => {
                   }} className="font-bold text-2xl text-slate-50">ZuckAds</h1>
                   </div>
                 </div>
-                <h2 className="font-bold bg-gradient-to-r from-red-400 via-red-400 to-purple-400 bg-clip-text text-4xl text-fuchsia-400">Combo Zuck</h2>
+                <h2 className="font-bold bg-gradient-to-r from-red-400 via-red-400 to-purple-400 bg-clip-text text-4xl text-amber-500">Combo Zuck</h2>
                 <p className="text-gray-200 text-xl">Acesso completo a ambas as plataformas com preço especial e benefícios exclusivos.</p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-2">
                   <div className="flex items-center space-x-2">
-                    <Shield className="w-5 h-5 text-red-400" />
+                    <Shield className="w-5 h-5 text-orange-400" />
                     <span className="text-gray-300">Painel ZuckSafe completo</span>
                   </div>
                   <div className="flex items-center space-x-2">
@@ -166,7 +166,7 @@ const Landing = () => {
                     <span className="text-gray-300">Painel ZuckSafeAds completo</span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <Users className="w-5 h-5 text-red-400" />
+                    <Users className="w-5 h-5 text-orange-400" />
                     <span className="text-gray-300">Prioridade de acesso</span>
                   </div>
                   <div className="flex items-center space-x-2">
@@ -174,7 +174,7 @@ const Landing = () => {
                     <span className="text-gray-300">Economia de 25%</span>
                   </div>
                 </div>
-                <Button size="lg" onClick={() => window.open('https://pay.perfectpay.com.br', '_blank')} className="w-full bg-gradient-to-r from-red-500 via-purple-500 to-purple-500 hover:from-red-500 hover:via-purple-600 hover:to-purple-600 text-white font-bold py-8 text-lg">
+                <Button size="lg" onClick={() => window.open('https://pay.perfectpay.com.br', '_blank')} className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-bold py-8 text-lg">
                   ADQUIRA O COMBO COMPLETO AGORA
                 </Button>
                 <p className="text-lg font-semibold text-transparent bg-gradient-to-r from-pink-400 to-blue-400 bg-clip-text">
