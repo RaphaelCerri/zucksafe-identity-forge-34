@@ -117,7 +117,7 @@ const Landing = () => {
                 <Button size="lg" onClick={() => window.open('https://pay.perfectpay.com.br', '_blank')} className="w-full bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-black font-bold py-6 bg-blue-500 hover:bg-blue-400">
                   ADIQUIRIR SEU ACESSO AGORA
                 </Button>
-                <p className="text-sm text-gray-500">Acesso vitalício por R$97,90</p>
+                <p className="text-sm text-gray-300">Acesso vitalício por R$97,90</p>
               </CardContent>
             </Card>
             
@@ -134,7 +134,7 @@ const Landing = () => {
                 <Button size="lg" onClick={() => window.open('https://pay.perfectpay.com.br', '_blank')} className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-black font-bold py-6">
                   CRIAR PERFIS OTIMIZADOS AGORA
                 </Button>
-                <p className="text-sm text-gray-500">Acesso vitalício por R$97,90</p>
+                <p className="text-sm text-gray-300">Acesso vitalício por R$97,90</p>
               </CardContent>
             </Card>
           </div>
@@ -177,7 +177,7 @@ const Landing = () => {
                 <Button size="lg" onClick={() => window.open('https://pay.perfectpay.com.br', '_blank')} className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-bold py-8 text-lg">
                   ADQUIRA O COMBO COMPLETO AGORA
                 </Button>
-                <p className="text-lg font-semibold bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-slate-50">
+                <p className="text-lg font-semibold bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-gray-300">
                   Acesso vitalício por apenas R$147,90
                 </p>
               </CardContent>
