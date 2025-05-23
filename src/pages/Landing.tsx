@@ -1,7 +1,8 @@
+
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Shield, Eye, Users, CreditCard, FileText, Image, BarChart } from 'lucide-react';
+import { Shield, Eye, Users, CreditCard, FileText, Image, BarChart, Zap } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 const Landing = () => {
   const navigate = useNavigate();
@@ -96,6 +97,45 @@ const Landing = () => {
                 <p className="text-gray-300">Ferramenta especializada para criação de contas de anúncios com alto limite de Business Management.</p>
                 <Button size="lg" className="w-full bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-black font-bold py-6" onClick={() => window.open('https://pay.perfectpay.com.br', '_blank')}>CRIE CONTAS AQUECIDAS AGORA</Button>
                 <p className="text-sm text-gray-500">Acesso vitalício por R$97,90</p>
+              </CardContent>
+            </Card>
+          </div>
+          
+          {/* Combo Zuck Card - Full Width */}
+          <div className="max-w-6xl mx-auto mb-16">
+            <Card className="bg-gray-800/50 border-2 border-pink-400 hover:border-blue-400 transition-all duration-300 p-6 animate-fade-in shadow-xl shadow-pink-500/10">
+              <CardContent className="p-0 space-y-6">
+                <div className="flex justify-center">
+                  <div className="w-20 h-20 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 rounded-full flex items-center justify-center">
+                    <Zap className="w-10 h-10 text-white" />
+                  </div>
+                </div>
+                <h2 className="text-3xl font-bold text-transparent bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 bg-clip-text">Combo Zuck</h2>
+                <p className="text-gray-200 text-xl">Acesso completo a ambas as plataformas com preço especial e benefícios exclusivos.</p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-2">
+                  <div className="flex items-center space-x-2">
+                    <Shield className="w-5 h-5 text-pink-400" />
+                    <span className="text-gray-300">ZuckSafe completo</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <BarChart className="w-5 h-5 text-blue-400" />
+                    <span className="text-gray-300">ZuckSafeAds completo</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <Users className="w-5 h-5 text-pink-400" />
+                    <span className="text-gray-300">Acesso prioritário</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <CreditCard className="w-5 h-5 text-blue-400" />
+                    <span className="text-gray-300">Economia de 25%</span>
+                  </div>
+                </div>
+                <Button size="lg" className="w-full bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 hover:from-pink-600 hover:via-purple-600 hover:to-blue-600 text-white font-bold py-8 text-lg" onClick={() => window.open('https://pay.perfectpay.com.br', '_blank')}>
+                  ADQUIRA O COMBO COMPLETO AGORA
+                </Button>
+                <p className="text-lg font-semibold text-transparent bg-gradient-to-r from-pink-400 to-blue-400 bg-clip-text">
+                  Acesso vitalício por apenas R$147,90
+                </p>
               </CardContent>
             </Card>
           </div>
