@@ -55,7 +55,7 @@ const Login = () => {
             <div className="mt-6 text-center">
               <p className="text-sm text-gray-400">
                 Ainda não tem acesso?{' '}
-                <button onClick={() => navigate('/')} className="text-cyan-400 hover:text-cyan-300">
+                <button onClick={() => navigate('/')} className="text-emerald-400">
                   Adquirir agora
                 </button>
               </p>
