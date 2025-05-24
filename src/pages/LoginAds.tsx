@@ -44,7 +44,7 @@ const LoginAds = () => {
                 <Input type="email" placeholder="seu@email.com" value={email} onChange={e => setEmail(e.target.value)} className="bg-gray-700 border-gray-600 text-white placeholder-gray-400 focus:border-green-400" required />
               </div>
               
-              <Button type="submit" className="w-full bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-black font-bold py-3" disabled={isLoading}>
+              <Button type="submit" disabled={isLoading} className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-black font-bold py-4 sm:py-6 text-xs sm:text-sm md:text-base">
                 {isLoading ? <div className="flex items-center space-x-2">
                     <div className="w-4 h-4 border-2 border-black border-t-transparent rounded-full animate-spin"></div>
                     <span>Verificando acesso...</span>
