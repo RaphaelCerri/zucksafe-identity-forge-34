@@ -55,7 +55,7 @@ const LoginAds = () => {
             <div className="mt-6 text-center">
               <p className="text-sm text-gray-400">
                 Ainda não tem acesso?{' '}
-                <button onClick={() => navigate('/')} className="text-green-400 hover:text-green-300">
+                <button onClick={() => navigate('/')} className="text-sky-500">
                   Adquirir agora
                 </button>
               </p>
