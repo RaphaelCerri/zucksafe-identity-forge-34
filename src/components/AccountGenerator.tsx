@@ -1,18 +1,22 @@
 import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
 import { Copy, User, RefreshCw, Eye, EyeOff } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+
 const AccountGenerator = () => {
   const [accounts, setAccounts] = useState<any[]>([]);
   const [isGenerating, setIsGenerating] = useState(false);
   const [platform, setPlatform] = useState('gmail');
+  const [quantity, setQuantity] = useState(10);
   const [visiblePasswords, setVisiblePasswords] = useState<{
     [key: number]: boolean;
   }>({});
   const {
     toast
   } = useToast();
+
   const generatePassword = () => {
     const categories = [
     // Foods
@@ -61,6 +65,7 @@ const AccountGenerator = () => {
     const combinations = [`${capitalizedWord}${numbers}${specialPart}`, `${capitalizedWord}${specialPart}${numbers}`, `${specialPart}${capitalizedWord}${numbers}`, `${numbers}${capitalizedWord}${specialPart}`, `${numbers}${specialPart}${capitalizedWord}`, `${specialPart}${numbers}${capitalizedWord}`];
     return combinations[Math.floor(Math.random() * combinations.length)];
   };
+
   const generateAccount = () => {
     const firstNames = ['ana', 'carlos', 'maria', 'joao', 'fernanda', 'ricardo', 'julia', 'pedro', 'beatriz', 'lucas'];
     const lastNames = ['silva', 'santos', 'oliveira', 'souza', 'lima', 'pereira', 'costa', 'ferreira', 'rodrigues', 'almeida'];
@@ -94,23 +99,26 @@ const AccountGenerator = () => {
       platform
     };
   };
+
   const generateAccounts = async () => {
     setIsGenerating(true);
 
     // Simula geração
     await new Promise(resolve => setTimeout(resolve, 2000));
     const newAccounts = Array.from({
-      length: 10
+      length: quantity
     }, generateAccount);
     setAccounts(newAccounts);
     setIsGenerating(false);
   };
+
   const togglePasswordVisibility = (index: number) => {
     setVisiblePasswords(prev => ({
       ...prev,
       [index]: !prev[index]
     }));
   };
+
   const copyAccount = (account: any) => {
     const accountData = `Email: ${account.email}
 Senha: ${account.password}
@@ -123,6 +131,7 @@ Aniversário: ${account.birthday}`;
       description: "Dados da conta copiados para a área de transferência"
     });
   };
+
   const platforms = [{
     id: 'gmail',
     name: 'Gmail'
@@ -133,16 +142,29 @@ Aniversário: ${account.birthday}`;
     id: 'outlook',
     name: 'Outlook'
   }];
+
   return <div className="space-y-6">
       <div className="flex items-center justify-between">
         <div>
           <h2 className="text-2xl font-bold text-white mb-2">Gerador de E-mail</h2>
-          <p className="text-gray-400">Gera e-mails válidss para diferentes plataformas</p>
+          <p className="text-gray-400">Gera e-mails válidos para diferentes plataformas</p>
         </div>
         <div className="flex items-center space-x-4">
-          <select value={platform} onChange={e => setPlatform(e.target.value)} className="bg-gray-700 border-gray-600 text-white rounded px-3 py-2">
-            {platforms.map(p => <option key={p.id} value={p.id}>{p.name}</option>)}
-          </select>
+          <div className="flex items-center space-x-2">
+            <select value={platform} onChange={e => setPlatform(e.target.value)} className="bg-gray-700 border-gray-600 text-white rounded px-3 py-2">
+              {platforms.map(p => <option key={p.id} value={p.id}>{p.name}</option>)}
+            </select>
+            <div className="flex items-center">
+              <Input
+                type="number"
+                min="1"
+                max="50"
+                value={quantity}
+                onChange={e => setQuantity(Math.max(1, Math.min(50, parseInt(e.target.value) || 1)))}
+                className="w-20 bg-gray-700 border-gray-600 text-white rounded"
+              />
+            </div>
+          </div>
           <Button onClick={generateAccounts} disabled={isGenerating} className="bg-gradient-to-r from-cyan-500 to-green-500 hover:from-cyan-600 hover:to-green-600 text-black font-bold">
             {isGenerating ? <div className="flex items-center space-x-2">
                 <div className="w-4 h-4 border-2 border-black border-t-transparent rounded-full animate-spin"></div>
@@ -203,4 +225,5 @@ Aniversário: ${account.birthday}`;
         </div>}
     </div>;
 };
+
 export default AccountGenerator;
