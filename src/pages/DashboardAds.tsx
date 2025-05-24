@@ -2,13 +2,20 @@
 import React, { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { BarChart, Users, LogOut, Eye, Code } from 'lucide-react';
+import { BarChart, Users, LogOut, Eye, Code, Menu, X } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import AdAccountCreator from '@/components/AdAccountCreator';
 import CloakerSafe from '@/components/CloakerSafe';
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerTrigger,
+} from "@/components/ui/drawer";
 
 const DashboardAds = () => {
   const [activeModule, setActiveModule] = useState('home');
+  const [drawerOpen, setDrawerOpen] = useState(false);
   const navigate = useNavigate();
   const userEmail = localStorage.getItem('zucksafeads_user');
 
@@ -32,6 +39,11 @@ const DashboardAds = () => {
     }
   ];
 
+  const handleModuleChange = (moduleId: string) => {
+    setActiveModule(moduleId);
+    setDrawerOpen(false);
+  };
+
   const renderContent = () => {
     if (activeModule === 'home') {
       return (
@@ -41,7 +53,7 @@ const DashboardAds = () => {
               Bem-vindo ao ZuckSafeAds
             </h2>
             <p className="text-gray-400 mb-8">
-              Selecione um módulo na barra lateral para começar a gerar suas contas
+              Clique no menu para selecionar um módulo
             </p>
           </div>
           
@@ -50,7 +62,7 @@ const DashboardAds = () => {
               <Card 
                 key={module.id} 
                 className="bg-gray-800/50 border-gray-700 hover:border-sky-400 transition-all duration-300 cursor-pointer hover:scale-105" 
-                onClick={() => setActiveModule(module.id)}
+                onClick={() => handleModuleChange(module.id)}
               >
                 <CardContent className="p-6 text-center">
                   <div className="text-sky-400 mb-4 flex justify-center">
@@ -98,37 +110,54 @@ const DashboardAds = () => {
       </header>
 
       <div className="flex">
-        {/* Sidebar */}
-        <aside className="w-64 bg-gray-900/50 border-r border-gray-800 min-h-screen">
-          <nav className="p-4 space-y-2">
-            <button 
-              onClick={() => setActiveModule('home')} 
-              className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg transition-all ${
-                activeModule === 'home' 
-                  ? 'bg-sky-500 text-black font-medium' 
-                  : 'text-gray-400 hover:bg-gray-800 hover:text-white'
-              }`}
+        {/* Floating Menu Button */}
+        <Drawer open={drawerOpen} onOpenChange={setDrawerOpen}>
+          <DrawerTrigger asChild>
+            <Button 
+              className="fixed left-4 top-32 z-50 bg-sky-500 hover:bg-sky-600 text-black" 
+              size="icon"
             >
-              <BarChart className="w-5 h-5" />
-              <span>Início</span>
-            </button>
-            
-            {modules.map(module => (
+              <Menu className="h-5 w-5" />
+            </Button>
+          </DrawerTrigger>
+          <DrawerContent className="bg-gray-900/95 border-t border-gray-800">
+            <div className="flex justify-end p-4">
+              <DrawerClose asChild>
+                <Button variant="ghost" size="icon" className="text-gray-400 hover:text-white">
+                  <X className="h-5 w-5" />
+                </Button>
+              </DrawerClose>
+            </div>
+            <nav className="p-4 space-y-2">
               <button 
-                key={module.id} 
-                onClick={() => setActiveModule(module.id)} 
+                onClick={() => handleModuleChange('home')} 
                 className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg transition-all ${
-                  activeModule === module.id 
+                  activeModule === 'home' 
                     ? 'bg-sky-500 text-black font-medium' 
                     : 'text-gray-400 hover:bg-gray-800 hover:text-white'
                 }`}
               >
-                {module.icon}
-                <span>{module.name}</span>
+                <BarChart className="w-5 h-5" />
+                <span>Início</span>
               </button>
-            ))}
-          </nav>
-        </aside>
+              
+              {modules.map(module => (
+                <button 
+                  key={module.id} 
+                  onClick={() => handleModuleChange(module.id)} 
+                  className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg transition-all ${
+                    activeModule === module.id 
+                      ? 'bg-sky-500 text-black font-medium' 
+                      : 'text-gray-400 hover:bg-gray-800 hover:text-white'
+                  }`}
+                >
+                  {module.icon}
+                  <span>{module.name}</span>
+                </button>
+              ))}
+            </nav>
+          </DrawerContent>
+        </Drawer>
 
         {/* Main Content */}
         <main className="flex-1 p-6">
