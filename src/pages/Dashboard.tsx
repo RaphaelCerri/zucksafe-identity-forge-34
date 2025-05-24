@@ -39,7 +39,7 @@ const Dashboard = () => {
     component: CardGenerator
   }, {
     id: 'accounts',
-    name: 'Contas Falsas',
+    name: 'Gerador de Email',
     icon: <Users className="w-5 h-5" />,
     component: AccountGenerator
   }, {
