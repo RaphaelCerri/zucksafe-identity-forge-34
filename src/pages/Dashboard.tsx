@@ -152,7 +152,7 @@ const Dashboard = () => {
             variant="outline" 
             size="icon" 
             onClick={() => setIsMenuOpen(true)} 
-            className="fixed left-4 top-20 z-40 bg-gray-800 border-gray-700 text-gray-300"
+            className="fixed right-4 top-20 z-40 bg-gray-800 border-gray-700 text-gray-300"
           >
             <Menu className="h-5 w-5" />
           </Button>
